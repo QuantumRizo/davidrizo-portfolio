@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "@/components/ProjectCard";
 import {
   Globe,
   BarChart3,
@@ -7,12 +7,12 @@ import {
   DatabaseZap,
   Tent,
   LayoutDashboard,
+  ArrowLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom"; // o 'next/link' si usas Next.js
+import { Link } from "react-router-dom";
 
-const Projects = () => {
+const ProjectsPage = () => {
   const projects = [
     {
       icon: <Globe className="size-8 text-primary" />,
@@ -66,45 +66,49 @@ const Projects = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-card to-background opacity-50" />
 
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-5xl font-bold mb-4">
             <span className="gradient-text">Projects</span>
-          </h2>
+          </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Exploring the intersection of physics, data science, and artificial
-            intelligence
+            A complete showcase of my work across data science, AI, and web
+            development.
           </p>
         </motion.div>
 
+        {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={project.title}>
-              <ProjectCard {...project} delay={index * 0.1} />
-            </div>
+            <ProjectCard key={project.title} {...project} delay={index * 0.1} />
           ))}
         </div>
 
-        {/* 👇 Botón Ver más */}
-        <div className="text-center mt-16">
-          <Link to="/projects">
+        {/* Back to Home button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-20"
+        >
+          <Link to="/">
             <Button
               variant="outline"
               className="group text-lg px-6 py-3 rounded-xl border-primary text-primary hover:bg-primary hover:text-background transition-all"
             >
-              More
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Home
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default ProjectsPage;
