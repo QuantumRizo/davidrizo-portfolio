@@ -20,7 +20,6 @@ const TelcoChurn = () => {
           </Link>
 
           <div className="glass-card rounded-3xl p-8 md:p-12 mb-8">
-            <div className="text-6xl mb-6">📉</div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
               Telco Churn Prediction
             </h1>
@@ -30,7 +29,7 @@ const TelcoChurn = () => {
 
             <div className="flex gap-4 flex-wrap">
               <Button className="glass-card" asChild>
-                <a href="https://github.com/davidrizo/telco-churn" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/QuantumRizo/Telco_Churn" target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-5 w-5" />
                   View Code
                 </a>
