@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden px-4">
+    <section className="relative min-h-screen flex items-center overflow-hidden px-8 md:px-4">
       {/* Fondo degradado (de tu código original) */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
       
@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
 
         {/* --- Columna Izquierda (Tu Info) --- */}
-        <div className="flex flex-col justify-center text-left">
+        <div className="flex flex-col justify-center text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
