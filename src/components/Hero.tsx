@@ -52,15 +52,17 @@ const Hero = () => {
           className="flex gap-4 justify-center flex-wrap"
         >
           <Button
-            size="lg"
-            className="glass-card hover:scale-105 transition-transform"
-            asChild
-          >
-            <a href="https://github.com/davidrizo" target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-5 w-5" />
-              GitHub
-            </a>
-          </Button>
+  size="lg"
+  variant="outline"
+  className="glass-card hover:scale-105 transition-transform"
+  asChild
+>
+  <a href="https://github.com/QuantumRizo" target="_blank" rel="noopener noreferrer">
+    <Github className="mr-2 h-5 w-5" />
+    GitHub
+  </a>
+</Button>
+
           
           <Button
             size="lg"
@@ -68,7 +70,7 @@ const Hero = () => {
             className="glass-card hover:scale-105 transition-transform"
             asChild
           >
-            <a href="https://linkedin.com/in/davidrizo" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/david-rizo-dev" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2 h-5 w-5" />
               LinkedIn
             </a>
@@ -80,7 +82,7 @@ const Hero = () => {
             className="glass-card hover:scale-105 transition-transform"
             asChild
           >
-            <a href="mailto:david@example.com">
+            <a href="mailto:davidrizo.phys@gmail.com">
               <Mail className="mr-2 h-5 w-5" />
               Contact
             </a>

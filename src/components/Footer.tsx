@@ -5,17 +5,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/davidrizo",
+      href: "https://github.com/QuantumRizo",
       label: "GitHub"
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/davidrizo",
+      href: "https://linkedin.com/in/david-rizo-dev",
       label: "LinkedIn"
     },
     {
       icon: Mail,
-      href: "mailto:david@example.com",
+      href: "mailto:davidrizo.phys@gmail.com",
       label: "Email"
     }
   ];
