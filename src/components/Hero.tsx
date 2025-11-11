@@ -97,7 +97,7 @@ const Hero = () => {
         >
           {/* 1. Limita el TAMAÑO DEL MARCO aquí y céntralo con mx-auto */}
           <div 
-            className="gradient-border rounded-3xl max-w-xs mx-auto md:max-w-sm"
+            className="gradient-border rounded-3xl max-w-[15rem] mx-auto md:max-w-sm"
             style={{
               // Aplica un resplandor permanente usando tus colores
               boxShadow: "0 0 40px hsl(var(--primary) / 0.4), 0 0 60px hsl(var(--secondary) / 0.3)"
