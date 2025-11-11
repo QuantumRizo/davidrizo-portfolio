@@ -1,24 +1,28 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+// 1. Importa los íconos que desees de lucide-react
+import { Globe, BarChart3, Brain } from "lucide-react"; 
 
-const MLProjects = () => {
+const Projects = () => {
   const projects = [
     {
-      icon: "🪐",
+      // 2. Reemplaza el emoji por el componente de ícono
+      // (Añadí clases de ejemplo para darles tamaño y color)
+      icon: <Globe className="size-8 text-primary" />,
       title: "Galaxy Classification",
       description: "Classifies galaxies as AGN or Starburst using machine learning and FITS spectral data. Built with Python, scikit-learn, and astronomical data processing.",
       githubUrl: "https://github.com/davidrizo/galaxy-classification",
       projectUrl: "/projects/galaxy-classification"
     },
     {
-      icon: "📉",
+      icon: <BarChart3 className="size-8 text-primary" />,
       title: "Telco Churn Prediction",
       description: "Predicts customer churn with Python and TensorFlow. Analyzes customer behavior patterns to identify at-risk subscribers and optimize retention strategies.",
       githubUrl: "https://github.com/davidrizo/telco-churn",
       projectUrl: "/projects/telco-churn"
     },
     {
-      icon: "🧬",
+      icon: <Brain className="size-8 text-primary" />,
       title: "Brain Tumor Detection",
       description: "Classifies MRI scans using deep learning models. Implements CNN architectures for accurate medical image analysis and tumor identification.",
       githubUrl: "https://github.com/davidrizo/brain-tumor-detection",
@@ -39,7 +43,7 @@ const MLProjects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Machine Learning <span className="gradient-text">Projects</span>
+            My <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Exploring the intersection of physics, data science, and artificial intelligence
@@ -60,4 +64,4 @@ const MLProjects = () => {
   );
 };
 
-export default MLProjects;
+export default Projects;

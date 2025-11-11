@@ -7,13 +7,14 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
-      <div 
+      <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 opacity-30 blur-3xl animate-glow"
         style={{
-          background: "radial-gradient(circle, hsl(193 100% 50% / 0.3), hsl(250 70% 60% / 0.2), transparent)"
+          background:
+            "radial-gradient(circle, hsl(193 100% 50% / 0.3), hsl(250 70% 60% / 0.2), transparent)",
         }}
       />
-      
+
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -24,7 +25,7 @@ const Hero = () => {
             Hi, I'm <span className="gradient-text">David Rizo</span>
           </h1>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,7 +35,7 @@ const Hero = () => {
             Physicist • Data Scientist • Software Developer
           </p>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +45,7 @@ const Hero = () => {
             I build intelligent systems, data dashboards, and modern web apps.
           </p>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,30 +53,37 @@ const Hero = () => {
           className="flex gap-4 justify-center flex-wrap"
         >
           <Button
-  size="lg"
-  variant="outline"
-  className="glass-card hover:scale-105 transition-transform"
-  asChild
->
-  <a href="https://github.com/QuantumRizo" target="_blank" rel="noopener noreferrer">
-    <Github className="mr-2 h-5 w-5" />
-    GitHub
-  </a>
-</Button>
+            size="lg"
+            variant="outline"
+            className="glass-card hover:scale-105 transition-transform"
+            asChild
+          >
+            <a
+              href="https://github.com/QuantumRizo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="mr-2 h-5 w-5" />
+              GitHub
+            </a>
+          </Button>
 
-          
           <Button
             size="lg"
             variant="outline"
             className="glass-card hover:scale-105 transition-transform"
             asChild
           >
-            <a href="https://linkedin.com/in/david-rizo-dev" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://linkedin.com/in/david-rizo-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Linkedin className="mr-2 h-5 w-5" />
               LinkedIn
             </a>
           </Button>
-          
+
           <Button
             size="lg"
             variant="outline"
@@ -89,7 +97,7 @@ const Hero = () => {
           </Button>
         </motion.div>
       </div>
-      
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}

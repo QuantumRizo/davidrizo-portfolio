@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ReactNode } from "react";
 
 interface ProjectCardProps {
-  icon: string;
+  icon: ReactNode;
   title: string;
   description: string;
   githubUrl: string;
