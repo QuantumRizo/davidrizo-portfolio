@@ -68,7 +68,7 @@ const Hero = () => {
               className="glass-card hover:scale-105 transition-transform"
               asChild
             >
-              <a href="https://linkedin.com/in/david-rizo-dev" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/felix-rizo-dev" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
               </a>

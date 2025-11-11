@@ -12,7 +12,7 @@ const SummerCamp = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link to="/">
+          <Link to="/projects">
             <Button variant="ghost" className="mb-8 glass-card">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Portfolio

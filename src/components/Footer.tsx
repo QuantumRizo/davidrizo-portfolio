@@ -10,7 +10,7 @@ const Footer = () => {
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/david-rizo-dev",
+      href: "https://linkedin.com/in/felix-rizo-dev",
       label: "LinkedIn"
     },
     {
