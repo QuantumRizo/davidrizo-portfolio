@@ -15,6 +15,13 @@ const Experience = () => {
       period: "2025 - 2026",
       description: "Led comprehensive coding program, teaching programming fundamentals and web development to students.",
       current: false
+    },
+    {
+      title: "Licenciatura en Física",
+      company: "Universidad Nacional Autónoma de México (UNAM)",
+      period: "– 2025",
+      description: "Completed a rigorous program in theoretical and experimental physics, building a strong foundation in mathematics, data analysis, and problem-solving.",
+      current: false
     }
   ];
 
