@@ -21,15 +21,15 @@ const SummerCamp = () => {
 
           <div className="glass-card rounded-3xl p-8 md:p-12 mb-8">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-              Summer Camp Web Page
+              Summer Camp Landing Page
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Responsive and engaging landing page for a summer camp, built with modern web technologies to attract and inform visitors.
+              A vibrant, responsive landing page concept built to showcase a summer camp experience. Designed with modern UI principles, fluid animations, and a playful color palette to engage families and young campers alike.
             </p>
 
             <div className="flex gap-4 flex-wrap">
               <Button className="glass-card" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/QuantumRizo/summercamp-webpage" target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-5 w-5" />
                   View Code
                 </a>
@@ -52,11 +52,11 @@ const SummerCamp = () => {
             >
               <h2 className="text-2xl font-bold mb-4 gradient-text">Tech Stack</h2>
               <ul className="space-y-2 text-foreground/80">
-                <li>• React</li>
-                <li>• Tailwind CSS</li>
-                <li>• Framer Motion (Animations)</li>
-                <li>• Responsive Design</li>
-                <li>• React Router</li>
+                <li>• React — Component-based architecture</li>
+                <li>• Tailwind CSS — Utility-first styling</li>
+                <li>• Framer Motion — Smooth, natural animations</li>
+                <li>• Responsive Design — Mobile-first approach</li>
+                <li>• React Router — Seamless navigation</li>
               </ul>
             </motion.div>
 
@@ -68,11 +68,11 @@ const SummerCamp = () => {
             >
               <h2 className="text-2xl font-bold mb-4 gradient-text">Key Features</h2>
               <ul className="space-y-2 text-foreground/80">
-                <li>• Interactive Hero Section</li>
-                <li>• Photo Gallery Carousel</li>
-                <li>• "Sign Up" Call-to-Action</li>
-                <li>• Mobile-First Layout</li>
-                <li>• Smooth Scroll Animations</li>
+                <li>• Animated hero section with call-to-action</li>
+                <li>• Interactive photo carousel</li>
+                <li>• Engaging “Join Now” section for signups</li>
+                <li>• Fully adaptive mobile and tablet layout</li>
+                <li>• Scroll-triggered motion effects</li>
               </ul>
             </motion.div>
           </div>
@@ -86,10 +86,10 @@ const SummerCamp = () => {
             <h2 className="text-3xl font-bold mb-6 gradient-text">Project Overview</h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                This project is a modern, responsive landing page designed to capture the excitement of a summer camp. The goal was to create an engaging visual experience for parents and potential campers.
+                The <strong>Summer Camp Landing Page</strong> was designed as a creative front-end project focused purely on visual design, user engagement, and motion interaction. Every section was crafted to evoke a sense of adventure and warmth through color, layout, and subtle animation.
               </p>
               <p>
-                Built with React and Tailwind CSS, the site features heavy use of Framer Motion for animations to make the browsing experience more dynamic. It's optimized for all screen sizes, ensuring a seamless experience whether on a desktop or a mobile device.
+                Developed entirely with <strong>React</strong> and <strong>Tailwind CSS</strong>, the page leverages <strong>Framer Motion</strong> for smooth transitions and scroll-based interactions. It’s a showcase of front-end craftsmanship — prioritizing responsive design, visual flow, and emotional connection with the user.
               </p>
             </div>
           </motion.div>

@@ -17,9 +17,9 @@ const Experience = () => {
       current: false
     },
     {
-      title: "Licenciatura en Física",
+      title: "B.Sc. in Physics",
       company: "Universidad Nacional Autónoma de México (UNAM)",
-      period: "– 2025",
+      period: "2020 - 2024",
       description: "Completed a rigorous program in theoretical and experimental physics, building a strong foundation in mathematics, data analysis, and problem-solving.",
       current: false
     }
