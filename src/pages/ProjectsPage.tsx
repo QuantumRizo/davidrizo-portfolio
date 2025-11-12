@@ -19,8 +19,8 @@ const ProjectsPage = () => {
     title: "Galaxy Classification",
     imageSrc: "/galaxy.jpg",
     description:
-      "Classifies galaxies as AGN or Starburst using machine learning and FITS spectral data. Built with Python, scikit-learn, and astronomical data processing.",
-    githubUrl: "https://github.com/davidrizo/galaxy-classification",
+      "Deep learning system that classifies galaxies as Active Galactic Nuclei (AGN) or Starburst using FITS spectroscopic data from SDSS. Combines Python, Astropy, and scikit-learn to extract spectral features and achieve high-precision astrophysical classification.",
+    githubUrl: "https://github.com/QuantumRizo/agn-starburst-galaxy-classifier",
     projectUrl: "/projects/galaxy-classification",
   },
   {
@@ -28,7 +28,7 @@ const ProjectsPage = () => {
     title: "CentralSimi (Provider Portal)",
     imageSrc: "/centralsimi.jpg",
     description:
-      "Full-stack platform built with React (Vite) and Supabase for secure legal document management. Implements PostgreSQL relational modeling, role-based access control, and dynamic file workflows for upload, validation, and transformation of legal records.",
+      "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records.",
     projectUrl: "/projects/central-simi",
   },
   {
@@ -36,8 +36,8 @@ const ProjectsPage = () => {
     title: "Telco Churn Prediction",
     imageSrc: "/churn.jpg",
     description:
-      "Predicts customer churn with Python and TensorFlow. Analyzes customer behavior patterns to identify at-risk subscribers and optimize retention strategies.",
-    githubUrl: "https://github.com/davidrizo/telco-churn",
+      "AI-driven model to predict customer churn in telecom datasets using TensorFlow and scikit-learn. Features advanced preprocessing, neural networks, and performance optimization to identify high-risk clients and enhance retention strategies.",
+    githubUrl: "https://github.com/QuantumRizo/Telco_Churn",
     projectUrl: "/projects/telco-churn",
   },
   {
@@ -45,7 +45,7 @@ const ProjectsPage = () => {
     title: "Marketing Campaign Dashboard",
     imageSrc: "/dashboard.jpg",
     description:
-      "Consolidated analytics dashboard. Connects and visualizes data from Programmatic, Google Ads, and GA4 to track KPI performance.",
+      "Interactive data visualization dashboard integrating Google Ads, Programmatic, and GA4 metrics. Designed to monitor marketing KPIs, optimize campaigns, and present performance insights in real time.",
     projectUrl: "/projects/campaign-dashboard",
   },
   {
@@ -53,8 +53,8 @@ const ProjectsPage = () => {
     title: "Brain Tumor Detection",
     imageSrc: "/brain.jpg",
     description:
-      "Classifies MRI scans using deep learning models. Implements CNN architectures for accurate medical image analysis and tumor identification.",
-    githubUrl: "https://github.com/davidrizo/brain-tumor-detection",
+      "Convolutional Neural Network that classifies MRI brain scans for tumor detection. Utilizes TensorFlow, OpenCV, and data augmentation to achieve high diagnostic accuracy and support medical image analysis workflows.",
+    githubUrl: "https://github.com/QuantumRizo/Brain-Tumor-Classification",
     projectUrl: "/projects/brain-tumor-detection",
   },
   {
@@ -62,7 +62,7 @@ const ProjectsPage = () => {
     title: "Summer Camp Web Page",
     imageSrc: "/summercamp.jpg",
     description:
-      "Responsive and engaging landing page for a summer camp, built with modern web technologies to attract and inform visitors.",
+      "Modern and responsive landing page developed with React and TailwindCSS. Combines dynamic visuals and clean UX to showcase camp programs, drive engagement, and facilitate online registration.",
     projectUrl: "/projects/summer-camp",
   },
 ];

@@ -24,17 +24,8 @@ const CampaignDashboard = () => {
               Marketing Campaign Dashboard
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Consolidated analytics dashboard. Connects and visualizes data from Programmatic, Google Ads, and GA4 to track KPI performance.
+              Unified marketing intelligence dashboard integrating multi-channel data, social media insights, and automated competitive tracking using Python and SQL.
             </p>
-
-            <div className="flex gap-4 flex-wrap">
-              <Button variant="outline" className="glass-card" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-5 w-5" />
-                  View Private Demo
-                </a>
-              </Button>
-            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -46,11 +37,12 @@ const CampaignDashboard = () => {
             >
               <h2 className="text-2xl font-bold mb-4 gradient-text">Tech Stack</h2>
               <ul className="space-y-2 text-foreground/80">
-                <li>• Data Visualization Tool (Power BI / Looker)</li>
-                <li>• Google Ads API</li>
-                <li>• Google Analytics 4 (GA4) API</li>
-                <li>• Programmatic Ads API Integration</li>
-                <li>• Data Blending & ETL</li>
+                <li>• Python (API Automation & Data Collection)</li>
+                <li>• SQL (Data Modeling & Integration)</li>
+                <li>• Looker (Interactive Dashboards)</li>
+                <li>• Google Ads API & GA4 API</li>
+                <li>• Meta, TikTok & YouTube Data APIs</li>
+                <li>• Programmatic Ads & ETL Pipelines</li>
               </ul>
             </motion.div>
 
@@ -62,11 +54,12 @@ const CampaignDashboard = () => {
             >
               <h2 className="text-2xl font-bold mb-4 gradient-text">Key Features</h2>
               <ul className="space-y-2 text-foreground/80">
-                <li>• Cross-Platform Data Consolidation</li>
-                <li>• KPI & ROI Visualization</li>
-                <li>• Programmatic Campaign Tracking</li>
-                <li>• Funnel Analysis (Google Ads & GA4)</li>
-                <li>• Automated Reporting</li>
+                <li>• Real-time cross-platform data consolidation</li>
+                <li>• AI-powered social media competitor insights</li>
+                <li>• Automated Python bot for API-driven data extraction</li>
+                <li>• SQL-based unification of diverse data sources</li>
+                <li>• Dynamic Looker dashboard with KPI visualizations</li>
+                <li>• ROI, engagement & funnel analytics across channels</li>
               </ul>
             </motion.div>
           </div>
@@ -80,10 +73,24 @@ const CampaignDashboard = () => {
             <h2 className="text-3xl font-bold mb-6 gradient-text">Project Overview</h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                This project addresses the challenge of fragmented marketing data by creating a single, unified dashboard. It connects directly to multiple advertising platforms, including Google Ads, GA4, and various programmatic sources.
+                This project centralizes fragmented marketing and social data into a single, intelligent dashboard. 
+                It automates data extraction from major advertising and social platforms — including Google Ads, GA4, 
+                Facebook, Instagram, TikTok, and YouTube — through custom Python scripts and API integrations.
               </p>
               <p>
-                The dashboard automatically pulls, cleans, and blends data to provide a comprehensive view of campaign performance. This allows stakeholders to move from platform-specific silos to a holistic understanding of marketing ROI, tracking KPIs from initial impression to final conversion.
+                A custom-built <strong>Python bot</strong> continuously collects competitor performance metrics such as 
+                engagement rates, follower growth, post frequency, and ad activity across platforms. 
+                These datasets are stored, cleaned, and integrated using <strong>SQL</strong> pipelines that 
+                harmonize multiple schemas into a unified data warehouse.
+              </p>
+              <p>
+                The resulting data is visualized in a powerful <strong>Looker dashboard</strong>, designed for 
+                real-time performance tracking and competitive benchmarking. Users can interact with KPIs, filter 
+                by channel or campaign, and identify optimization opportunities at a glance.
+              </p>
+              <p>
+                This system bridges marketing analytics and data engineering — turning dispersed social and ad 
+                data into actionable intelligence for decision-makers.
               </p>
             </div>
           </motion.div>

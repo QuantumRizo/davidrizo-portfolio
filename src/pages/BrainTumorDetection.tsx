@@ -24,14 +24,19 @@ const BrainTumorDetection = () => {
               Brain Tumor Detection
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Deep learning model for automated brain tumor classification from MRI scans using CNN architectures
+              Deep learning pipeline for MRI-based brain tumor classification using advanced CNN architectures and
+              medical image preprocessing.
             </p>
 
             <div className="flex gap-4 flex-wrap">
               <Button className="glass-card" asChild>
-                <a href="https://github.com/QuantumRizo/Brain-Tumor-Classification" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/QuantumRizo/Brain-Tumor-Classification"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Github className="mr-2 h-5 w-5" />
-                  View Code
+                  View Repository
                 </a>
               </Button>
               <Button variant="outline" className="glass-card" asChild>
@@ -52,11 +57,11 @@ const BrainTumorDetection = () => {
             >
               <h2 className="text-2xl font-bold mb-4 gradient-text">Tech Stack</h2>
               <ul className="space-y-2 text-foreground/80">
-                <li>• TensorFlow & Keras</li>
-                <li>• OpenCV for image processing</li>
-                <li>• ResNet & VGG architectures</li>
-                <li>• Transfer learning</li>
-                <li>• Data augmentation</li>
+                <li>• TensorFlow ≥ 2.0 & Keras for model development</li>
+                <li>• Python 3.x</li>
+                <li>• OpenCV for image preprocessing and augmentation</li>
+                <li>• Transfer Learning with ResNet and VGG backbones</li>
+                <li>• Model training scripts and architecture export (.json / .h5)</li>
               </ul>
             </motion.div>
 
@@ -66,13 +71,13 @@ const BrainTumorDetection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="glass-card rounded-2xl p-6"
             >
-              <h2 className="text-2xl font-bold mb-4 gradient-text">Key Features</h2>
+              <h2 className="text-2xl font-bold mb-4 gradient-text">Core Features</h2>
               <ul className="space-y-2 text-foreground/80">
-                <li>• Multi-class classification</li>
-                <li>• Image preprocessing pipeline</li>
-                <li>• Model ensembling</li>
-                <li>• Grad-CAM visualization</li>
-                <li>• High accuracy metrics</li>
+                <li>• Multi-class tumor classification (glioma, meningioma, pituitary)</li>
+                <li>• Fully automated MRI preprocessing pipeline</li>
+                <li>• Ensemble model integration for enhanced performance</li>
+                <li>• Grad-CAM heatmap interpretability</li>
+                <li>• High accuracy validated on public Kaggle datasets</li>
               </ul>
             </motion.div>
           </div>
@@ -86,21 +91,24 @@ const BrainTumorDetection = () => {
             <h2 className="text-3xl font-bold mb-6 gradient-text">Project Overview</h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                This medical imaging project applies state-of-the-art deep learning techniques to detect and classify 
-                brain tumors from MRI scans. The system can identify different tumor types including gliomas, meningiomas, 
-                and pituitary tumors, providing a valuable diagnostic aid for healthcare professionals.
+                <strong>QuantumRizo’s Brain Tumor Classification</strong> is a deep learning system designed to assist
+                in early and accurate brain tumor diagnosis. Built on state-of-the-art convolutional neural networks,
+                it analyzes MRI scans to classify tumors into distinct pathological categories.
               </p>
               <p>
-                Using convolutional neural networks (CNNs) with transfer learning from pre-trained models like ResNet 
-                and VGG, the system achieves high accuracy while maintaining computational efficiency. The architecture 
-                includes custom layers optimized for medical image analysis and extensive data augmentation to handle 
-                limited training samples.
+                The pipeline leverages transfer learning from architectures such as <strong>ResNet</strong> and{" "}
+                <strong>VGG</strong>, fine-tuned for medical imaging precision. A robust preprocessing stage — including
+                normalization, augmentation, and noise reduction — ensures consistent input quality even in heterogeneous
+                datasets.
               </p>
               <p>
-                The project emphasizes model interpretability through Grad-CAM visualizations, allowing medical 
-                professionals to understand which regions of the MRI influenced the prediction. This transparency is 
-                crucial for clinical adoption and building trust in AI-assisted diagnosis. The model has been validated 
-                on public medical imaging datasets and shows promise for real-world deployment.
+                Model interpretability is achieved via <strong>Grad-CAM</strong> visualizations, highlighting tumor
+                regions that most influence predictions. This bridges the gap between artificial intelligence and
+                clinical decision-making, fostering transparency and trust.
+              </p>
+              <p>
+                The project demonstrates how advanced physics-based understanding of imaging signals can combine with
+                data-driven neural networks to deliver real medical value — a step toward AI-augmented radiology.
               </p>
             </div>
           </motion.div>

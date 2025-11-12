@@ -21,15 +21,19 @@ const GalaxyClassification = () => {
 
           <div className="glass-card rounded-3xl p-8 md:p-12 mb-8">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-              Galaxy Classification
+              Galaxy Classification (AGN vs. Starburst)
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Machine learning model to classify galaxies as Active Galactic Nuclei (AGN) or Starburst galaxies using FITS spectral data
+              Deep learning pipeline for classifying galaxies into Active Galactic Nuclei (AGN) or Starburst types using spectroscopic FITS data from the Sloan Digital Sky Survey (SDSS). Developed in collaboration with the Institute of Astronomy at UNAM.
             </p>
 
             <div className="flex gap-4 flex-wrap">
               <Button className="glass-card" asChild>
-                <a href="https://github.com/QuantumRizo/agn-starburst-galaxy-classifier" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/QuantumRizo/agn-starburst-galaxy-classifier"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Github className="mr-2 h-5 w-5" />
                   View Code
                 </a>
@@ -37,7 +41,7 @@ const GalaxyClassification = () => {
               <Button variant="outline" className="glass-card" asChild>
                 <a href="#demo" target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-5 w-5" />
-                  Live Demo
+                  Project Docs
                 </a>
               </Button>
             </div>
@@ -52,10 +56,10 @@ const GalaxyClassification = () => {
             >
               <h2 className="text-2xl font-bold mb-4 gradient-text">Tech Stack</h2>
               <ul className="space-y-2 text-foreground/80">
-                <li>• Python & NumPy</li>
-                <li>• scikit-learn</li>
-                <li>• Astropy for FITS data</li>
-                <li>• Pandas for data processing</li>
+                <li>• Python, NumPy, Pandas</li>
+                <li>• TensorFlow (1D CNN)</li>
+                <li>• Scikit-learn</li>
+                <li>• Astropy (FITS Data Handling)</li>
                 <li>• Matplotlib & Seaborn</li>
               </ul>
             </motion.div>
@@ -68,11 +72,11 @@ const GalaxyClassification = () => {
             >
               <h2 className="text-2xl font-bold mb-4 gradient-text">Key Features</h2>
               <ul className="space-y-2 text-foreground/80">
-                <li>• Spectral line analysis</li>
-                <li>• Feature extraction pipeline</li>
-                <li>• Multiple ML classifiers</li>
-                <li>• Cross-validation</li>
-                <li>• Performance metrics</li>
+                <li>• Automated galaxy classification from FITS spectra</li>
+                <li>• 1D Convolutional Neural Network (CNN) architecture</li>
+                <li>• Redshift correction and spectral normalization</li>
+                <li>• Ensemble model evaluation with high accuracy (&gt;90%)</li>
+                <li>• Confusion matrix and learning curve visualization</li>
               </ul>
             </motion.div>
           </div>
@@ -86,19 +90,16 @@ const GalaxyClassification = () => {
             <h2 className="text-3xl font-bold mb-6 gradient-text">Project Overview</h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                This project tackles the challenge of automated galaxy classification using spectroscopic data. 
-                By analyzing emission line ratios and spectral features from FITS files, the model can distinguish 
-                between galaxies dominated by star formation (Starburst) and those powered by supermassive black holes (AGN).
+                This project aims to automate the classification of galaxies into <strong>Active Galactic Nuclei (AGN)</strong> and <strong>Starburst</strong> categories using spectral data from the <strong>Sloan Digital Sky Survey (SDSS)</strong>. 
+                It leverages <strong>1D Convolutional Neural Networks</strong> to detect key emission patterns and physical features in galactic spectra.
               </p>
               <p>
-                The classification pipeline includes sophisticated data preprocessing, feature engineering from spectral 
-                lines, and ensemble machine learning techniques. The model achieves high accuracy by leveraging physical 
-                properties of galactic spectra combined with modern ML algorithms.
+                The data preprocessing pipeline — built with <strong>Astropy</strong> and <strong>NumPy</strong> — handles FITS file parsing, flux normalization, and redshift correction. The model training phase integrates multiple ML techniques, 
+                including data augmentation, ensemble learning, and cross-validation, achieving strong classification performance on unseen data.
               </p>
               <p>
-                Key challenges included handling noisy astronomical data, dealing with redshift corrections, and 
-                extracting meaningful features from complex spectral distributions. The solution implements robust 
-                preprocessing steps and multiple classification algorithms to ensure reliable predictions.
+                The system was developed as part of a research collaboration at the <strong>Instituto de Astronomía (UNAM)</strong> under the supervision of <strong>Dr. José Antonio de Diego Onsurbe</strong>. 
+                The results demonstrate how deep learning can accelerate large-scale astrophysical data analysis and galaxy taxonomy.
               </p>
             </div>
           </motion.div>
