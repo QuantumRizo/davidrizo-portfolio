@@ -8,7 +8,8 @@ interface ProjectCardProps {
   icon: ReactNode;
   title: string;
   description: string;
-  githubUrl?: string; // 👈 la hacemos opcional
+  imageSrc: string; // <-- nueva prop
+  githubUrl?: string;
   projectUrl: string;
   delay?: number;
 }
@@ -17,6 +18,7 @@ const ProjectCard = ({
   icon,
   title,
   description,
+  imageSrc,
   githubUrl,
   projectUrl,
   delay = 0,
@@ -28,17 +30,32 @@ const ProjectCard = ({
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay }}
       whileHover={{ y: -5 }}
-      className="glass-card rounded-2xl p-6 group flex flex-col h-full"
+      className="glass-card rounded-2xl flex flex-col h-full"
     >
-      <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="text-2xl font-bold mb-3 group-hover:gradient-text transition-all">
-        {title}
-      </h3>
-      <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
+      {/* Icono y título en la misma línea */}
+      <div className="flex items-center space-x-3 p-6">
+        <div className="text-4xl">{icon}</div>
+        <h3 className="text-2xl font-bold group-hover:gradient-text transition-all">
+          {title}
+        </h3>
+      </div>
+
+      {/* Imagen del proyecto */}
+      <div className="w-full">
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full h-auto object-cover rounded-b-2xl"
+        />
+      </div>
+
+      {/* Descripción */}
+      <p className="text-muted-foreground p-6 pt-4 flex-grow leading-relaxed">
         {description}
       </p>
 
-      <div className="space-y-3">
+      {/* Botones */}
+      <div className="p-6 pt-0 space-y-3">
         <Button
           className="glass-card w-full group-hover:border-primary transition-all"
           asChild
@@ -49,7 +66,6 @@ const ProjectCard = ({
           </Link>
         </Button>
 
-        {/* 👇 Solo muestra el botón si existe githubUrl */}
         {githubUrl && (
           <Button
             variant="outline"

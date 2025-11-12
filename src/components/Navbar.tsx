@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -14,69 +12,40 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-background/70 backdrop-blur-md border-b border-border z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo / Nombre */}
-        <Link
-          to="/"
-          className="gradient-text">David Rizo
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === link.path
-                  ? "text-primary"
-                  : "text-foreground"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground hover:text-primary transition-colors"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-background/95 border-t border-border"
+    // CAMBIO 1: Quitamos 'w-full' y 'bg-background'.
+    // Usamos 'w-fit' para que se ajuste al tamaño de los botones.
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-fit">
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        // CAMBIO 2: El color y el blur van AQUI, en la cápsula interna.
+        // Ajusté los colores para que combinen con tu fondo dark/purple.
+        className="flex items-center gap-6 px-6 py-2.5 
+                   bg-black/20 backdrop-blur-md 
+                   border border-white/10 rounded-full shadow-2xl"
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            to={link.path}
+            className={`relative text-sm font-medium transition-colors hover:text-purple-400 ${
+              location.pathname === link.path
+                ? "text-white"
+                : "text-gray-400"
+            }`}
           >
-            <div className="flex flex-col items-center py-4 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-base font-medium transition-colors hover:text-primary ${
-                    location.pathname === link.path
-                      ? "text-primary"
-                      : "text-foreground"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {link.name}
+            {/* Indicador activo (opcional, puntito brillante debajo) */}
+            {location.pathname === link.path && (
+              <motion.div
+                layoutId="underline"
+                className="absolute left-0 right-0 -bottom-1 mx-auto h-[2px] w-4 bg-purple-500 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)]"
+              />
+            )}
+          </Link>
+        ))}
+      </motion.div>
     </nav>
   );
 };
