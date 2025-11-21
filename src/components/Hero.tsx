@@ -100,7 +100,7 @@ const ScrambledTitle: React.FC = () => {
     if (mounted && scramblerRef.current) {
       // TUS FRASES PERSONALIZADAS
       const phrases = [
-        'Hello, David Rizo',
+        'Hello, I\'m David Rizo',
         'Software Developer',
         'Physicist & Data Scientist',
         'Building the Future',
