@@ -31,7 +31,7 @@ const Footer = () => {
           transition={{ duration: 0.8 }}
           className="h-px w-full mb-8"
           style={{
-            background: "linear-gradient(90deg, transparent, hsl(193 100% 50%), hsl(250 70% 60%), hsl(280 80% 65%), transparent)"
+            background: "linear-gradient( transparent, hsla(135, 100%, 50%, 1.00)"
           }}
         />
         

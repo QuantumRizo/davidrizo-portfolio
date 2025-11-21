@@ -29,7 +29,7 @@ const Navbar = () => {
           <Link
             key={link.name}
             to={link.path}
-            className={`relative text-sm font-medium transition-colors hover:text-purple-400 ${
+            className={`relative text-sm font-medium transition-colors hover:text-primary ${
               location.pathname === link.path
                 ? "text-white"
                 : "text-gray-400"
@@ -40,7 +40,8 @@ const Navbar = () => {
             {location.pathname === link.path && (
               <motion.div
                 layoutId="underline"
-                className="absolute left-0 right-0 -bottom-1 mx-auto h-[2px] w-4 bg-purple-500 rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)]"
+                className="absolute left-0 right-0 -bottom-1 mx-auto h-[2px] w-4 bg-[hsl(var(--primary))]
+ rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)]"
               />
             )}
           </Link>
