@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
+import About from "@/components/About";
+import TechStack from "@/components/TechStack";
 
 const Index = () => {
   return (
@@ -26,7 +28,9 @@ const Index = () => {
           - bg-background: CRÍTICO. Debe tener color sólido para tapar al Hero.
       */}
       <div className="relative z-10 bg-background shadow-2xl">
+        <About />
         <Projects />
+        <TechStack />
         <Experience />
         
         {/* Espacio extra al final para que no se sienta apretado */}

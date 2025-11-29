@@ -8,25 +8,25 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 20% 6%;
+    --background: 0 0% 0%;
     --foreground: 210 40% 98%;
 
-    --card: 240 15% 10%;
+    --card: 0 0% 0%;
     --card-foreground: 210 40% 98%;
 
     --popover: 240 15% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 135 100% 50%;
+    --primary: 0 0% 100%;
     --primary-foreground: 240 20% 6%;
 
-    --secondary: 140 70% 60%;
+    --secondary: 0 0% 100%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 240 10% 20%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 135 100% 50%;
+    --accent: 0 0% 100%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,12 +34,12 @@ All colors MUST be HSL.
 
     --border: 240 10% 20%;
     --input: 240 10% 20%;
-    --ring: 140 100% 50%;
+    --ring: 0 0% 100%;
 
     --radius: 1rem;
     
     /* Custom gradient tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(135, 100%, 50%), hsl(145, 70%, 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 0%, 100%));
     --gradient-secondary: linear-gradient(180deg, hsl(240 20% 6%), hsl(240 15% 10%));
     --gradient-glow: radial-gradient(circle at 50% 0%, hsl(193 100% 50% / 0.15), transparent 50%);
     
@@ -65,7 +65,7 @@ All colors MUST be HSL.
 
     --sidebar-border: 220 13% 91%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 0 0% 100%;
   }
 
 }
@@ -92,7 +92,7 @@ All colors MUST be HSL.
   }
   
   .glass-card:hover {
-    border-color: hsl(var(--primary) / 0.5);
+    border-color: var(--primary);
     box-shadow: 0 0 40px hsl(var(--primary) / 0.4), 0 8px 32px 0 hsl(0 0% 0% / 0.37);
     background: hsl(240 15% 10% / 0.6);
   }
