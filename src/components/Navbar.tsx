@@ -1,9 +1,21 @@
-import { useState } from "react";
+// src/components/Navbar.tsx
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Detectar el scroll para cambiar el estilo
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -12,41 +24,52 @@ const Navbar = () => {
   ];
 
   return (
-    // CAMBIO 1: Quitamos 'w-full' y 'bg-background'.
-    // Usamos 'w-fit' para que se ajuste al tamaño de los botones.
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-fit">
-      <motion.div
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        // CAMBIO 2: El color y el blur van AQUI, en la cápsula interna.
-        // Ajusté los colores para que combinen con tu fondo dark/purple.
-        className="flex items-center gap-6 px-6 py-2.5 
-                   bg-black/20 backdrop-blur-md 
-                   border border-white/10 rounded-full shadow-2xl"
-      >
-        {navLinks.map((link) => (
-          <Link
-            key={link.name}
-            to={link.path}
-            className={`relative text-sm font-medium transition-colors hover:text-primary ${
-              location.pathname === link.path
-                ? "text-white"
-                : "text-gray-400"
-            }`}
-          >
-            {link.name}
-            {/* Indicador activo (opcional, puntito brillante debajo) */}
-            {location.pathname === link.path && (
-              <motion.div
-                layoutId="underline"
-                className="absolute left-0 right-0 -bottom-1 mx-auto h-[2px] w-4 bg-[hsl(var(--primary))]
- rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)]"
-              />
-            )}
-          </Link>
-        ))}
-      </motion.div>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        isScrolled
+          ? "py-4 bg-background/70 backdrop-blur-md border-b border-white/5 shadow-lg" // Estilo al bajar
+          : "py-6 bg-transparent border-transparent" // Estilo inicial (transparente)
+      }`}
+    >
+      <div className="container mx-auto px-6 flex items-center justify-between">
+        
+        {/* LOGO O NOMBRE (Opcional, izquierda) */}
+        <Link to="/" className="text-2xl font-bold font-mono tracking-tighter hover:text-primary transition-colors">
+          DAVID_RIZO
+        </Link>
+
+        {/* LINKS (Derecha) */}
+        <div className="flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className="relative group py-1"
+            >
+              <span
+                className={`text-base font-medium transition-colors duration-300 ${
+                  location.pathname === link.path
+                    ? "text-primary" // Color verde activo
+                    : "text-foreground/70 hover:text-primary" // Gris a Verde
+                }`}
+              >
+                {link.name}
+              </span>
+
+              {/* Línea animada debajo del link activo */}
+              {location.pathname === link.path && (
+                <motion.div
+                  layoutId="underline"
+                  className="absolute left-0 right-0 bottom-0 h-[2px] bg-primary shadow-[0_0_10px_hsl(var(--primary))]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
+            </Link>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 };
