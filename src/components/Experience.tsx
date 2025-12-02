@@ -21,7 +21,7 @@ const Experience = () => {
       company: "Central de Negocios MX",
       period: "Current",
       description: "Leading data science initiatives, developing ML models, and creating actionable insights from complex datasets.",
-      skills: ["Python", "Machine Learning", "SQL", "Tableau"],
+      skills: ["Python", "Machine Learning", "SQL", "Power BI"],
       current: true
     },
     {
@@ -29,7 +29,7 @@ const Experience = () => {
       company: "French Woods Festival",
       period: "2025 - 2026",
       description: "Led comprehensive coding program, teaching programming fundamentals and web development to students.",
-      skills: ["Teaching", "Curriculum Dev", "Web Dev"],
+      skills: ["Teaching", "Coding", "Leadership"],
       current: false
     },
     {
@@ -37,7 +37,7 @@ const Experience = () => {
       company: "UNAM",
       period: "2020 - 2024",
       description: "Completed a rigorous program in theoretical and experimental physics, building a strong foundation in mathematics.",
-      skills: ["Physics", "Calculus", "Data Analysis"],
+      skills: ["Physics", "Team Work", "Research", "Problem Solving"],
       current: false
     }
   ];
