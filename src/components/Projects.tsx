@@ -1,113 +1,85 @@
+// pages/Home/Projects.jsx (o donde lo tengas)
 import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
-import {
-  Globe,
-  BarChart3,
-  Brain,
-  DatabaseZap,
-  Tent,
-  LayoutDashboard,
-} from "lucide-react";
+import ProjectCaseStudy from "@/components/ProjectCaseStudy.tsx"; // Asegúrate de importar el nuevo componente
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom"; // o 'next/link' si usas Next.js
+import { Link } from "react-router-dom";
 
 const Projects = () => {
-  const projects = [
+  // Datos de los 3 proyectos seleccionados
+  // Ejemplo de cómo quedaría tu array de datos:
+const featuredProjects = [
   {
-    icon: <Globe className="size-8 text-primary" />,
+    title: "CentralSimi (Provider Portal)",
+    imageSrc: "/simiProject1.png",
+    secondaryImageSrc: "/simiProject2.png", // <--- AÑADIR ESTO
+    description:
+      "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records.",
+    technologies: ["React", "Vite", "Supabase", "PostgreSQL", "TailwindCSS"],
+    projectUrl: "/projects/central-simi",
+  },
+  {
     title: "Galaxy Classification",
-    imageSrc: "/galaxy.jpg",
+    imageSrc: "/galaxyProject1.jpg",
+    secondaryImageSrc: "/galaxyProject2.jpg", // <--- AÑADIR ESTO
     description:
       "Deep learning system that classifies galaxies as Active Galactic Nuclei (AGN) or Starburst using FITS spectroscopic data from SDSS. Combines Python, Astropy, and scikit-learn to extract spectral features and achieve high-precision astrophysical classification.",
+    technologies: ["Python", "Astropy", "scikit-learn", "Deep Learning"],
     githubUrl: "https://github.com/QuantiumRizo/agn-starburst-galaxy-classifier",
     projectUrl: "/projects/galaxy-classification",
   },
   {
-    icon: <DatabaseZap className="size-8 text-primary" />,
-    title: "CentralSimi (Provider Portal)",
-    imageSrc: "/centralsimi.jpg",
-    description:
-      "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records.",
-    projectUrl: "/projects/central-simi",
-  },
-  {
-    icon: <BarChart3 className="size-8 text-primary" />,
-    title: "Telco Churn Prediction",
-    imageSrc: "/churn.jpg",
-    description:
-      "AI-driven model to predict customer churn in telecom datasets using TensorFlow and scikit-learn. Features advanced preprocessing, neural networks, and performance optimization to identify high-risk clients and enhance retention strategies.",
-    githubUrl: "https://github.com/QuantumRizo/Telco_Churn",
-    projectUrl: "/projects/telco-churn",
-  },
-  {
-    icon: <LayoutDashboard className="size-8 text-primary" />,
-    title: "Marketing Campaign Dashboard",
-    imageSrc: "/dashboard.jpg",
-    description:
-      "Interactive data visualization dashboard integrating Google Ads, Programmatic, and GA4 metrics. Designed to monitor marketing KPIs, optimize campaigns, and present performance insights in real time.",
-    projectUrl: "/projects/campaign-dashboard",
-  },
-  {
-    icon: <Brain className="size-8 text-primary" />,
-    title: "Brain Tumor Detection",
-    imageSrc: "/brain.jpg",
-    description:
-      "Convolutional Neural Network that classifies MRI brain scans for tumor detection. Utilizes TensorFlow, OpenCV, and data augmentation to achieve high diagnostic accuracy and support medical image analysis workflows.",
-    githubUrl: "https://github.com/QuantumRizo/Brain-Tumor-Classification",
-    projectUrl: "/projects/brain-tumor-detection",
-  },
-  {
-    icon: <Tent className="size-8 text-primary" />,
     title: "Summer Camp Web Page",
     imageSrc: "/summercamp.jpg",
+    secondaryImageSrc: "/summerCamp2.png", 
     description:
       "Modern and responsive landing page developed with React and TailwindCSS. Combines dynamic visuals and clean UX to showcase camp programs, drive engagement, and facilitate online registration.",
+    technologies: ["React", "TailwindCSS", "Responsive Design"],
     projectUrl: "/projects/summer-camp",
   },
 ];
 
-
-
   return (
-    <section className="py-24 px-4 relative">
-
+    <section className="py-10 px-4 relative bg-black text-white">
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Encabezado de la Sección */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Projects
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            Featured Projects
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Exploring the intersection of physics, data science, and artificial
-            intelligence
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={project.title}>
-              <ProjectCard {...project} delay={index * 0.1} />
-            </div>
+        {/* Lista Vertical de Estudios de Caso */}
+        <div className="flex flex-col">
+          {featuredProjects.map((project, index) => (
+            <ProjectCaseStudy key={project.title} {...project} index={index} />
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        {/* Botón "Ver Más" al final */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="text-center mt-24"
+        >
           <Link to="/projects">
             <Button
               variant="outline"
-              className="group text-lg px-6 py-3 rounded-xl border-primary text-primary hover:bg-primary hover:text-background transition-all"
+              className="group text-lg px-8 py-4 rounded-full border-neutral-700 text-white hover:bg-neutral-900 transition-all"
             >
-              More
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              View All Archives
+              <ArrowRight className="ml-2 size-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
