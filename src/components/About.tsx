@@ -5,7 +5,7 @@ export default function About() {
       className="py-20 px-6 max-w-5xl mx-auto relative"
     >
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         
         {/* TEXT */}
         <div>

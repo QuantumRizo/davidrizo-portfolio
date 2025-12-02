@@ -149,15 +149,15 @@ const Hero: React.FC = () => {
   ]
 
   return (
-    <div className="relative w-full h-screen flex flex-col items-center justify-start overflow-hidden pt-32 md:pt-80">
-      <style>{`.dud { color: #0f0; opacity: 0.7; }`}</style>
+    <div className="relative w-full h-[66vh] flex flex-col items-center overflow-hidden justify-start pt-20 md:pt-20">
+      <style>{`.dud { color: rgba(94, 255, 0, 1); opacity: 0.7; }`}</style>
 
       {/* Imagen de fondo */}
       <div className="absolute inset-0 z-0">
         <img
           src="/heroFondo.jpg"
           alt="Background Hero"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center md:object-bottom"
         />
         <div className="absolute inset-0 bg-black/60" />
       </div>
