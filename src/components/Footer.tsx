@@ -59,16 +59,7 @@ const Footer = () => {
               );
             })}
           </motion.div>
-          
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-muted-foreground text-sm text-center"
-          >
-            Built with React, TailwindCSS & Framer Motion
-          </motion.p>
+      
           
           <motion.p
             initial={{ opacity: 0 }}
