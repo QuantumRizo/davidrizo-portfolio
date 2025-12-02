@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion"; // 1. Importamos hooks de scroll
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -27,8 +27,31 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
 }) => {
   const overlayImage = secondaryImageSrc || imageSrc;
   
-  // Estado para controlar si el usuario hizo click (Fijar imagen)
-  const [isLocked, setIsLocked] = useState(false);
+  // 2. Referencia al contenedor de las imágenes para medir su posición
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // 3. Detectamos el scroll de ESTE componente específico
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    // "start end": Cuando el TOPE del componente entra por el FONDO de la pantalla
+    // "end center": Cuando el FONDO del componente llega al CENTRO de la pantalla
+    offset: ["start end", "end center"] 
+  });
+
+  // 4. Transformamos el scroll en animaciones
+  
+  // La imagen 2 (Mobile) sube desde abajo (110%) hasta su posición (0%)
+  // Empieza a subir cuando vamos al 40% del recorrido y termina al 70%
+  const yOverlay = useTransform(scrollYProgress, [0.5, 0.7], ["110%", "0%"]);
+  
+  // La imagen 2 también rota un poco para "aterrizar" recta
+  const rotateOverlay = useTransform(scrollYProgress, [0.3, 0.9], [6, 0]);
+
+  // La imagen 1 (Desktop) se hace un poco pequeña y transparente para dar profundidad
+  const scaleBase = useTransform(scrollYProgress, [0.3, 0.9], [1, 0.95]);
+  const opacityBase = useTransform(scrollYProgress, [0.5, 0.9], [1, 0.6]);
+  const rotateBase = useTransform(scrollYProgress, [0.3, 0.9], [0, -3]);
+
 
   return (
     <motion.div
@@ -40,55 +63,42 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
     >
       {/* --- CANVAS DE IMÁGENES --- */}
       <div 
-        // AL DAR CLICK: Alternamos entre "Fijado" y "No Fijado"
-        // Esto funciona tanto en Móvil como en PC.
-        onClick={() => setIsLocked(!isLocked)} 
-        className="w-full lg:w-3/5 h-[400px] lg:h-[550px] relative rounded-3xl overflow-hidden bg-background group shadow-2xl cursor-pointer"
+        ref={containerRef} // Conectamos el ref aquí
+        className="w-full lg:w-3/5 h-[400px] lg:h-[550px] relative rounded-3xl overflow-hidden bg-background shadow-2xl"
       >
-        
         <div className="absolute inset-0 bg-background z-0 pointer-events-none" />
 
         {/* IMAGEN 1: Fondo (Desktop) */}
-        {/* LÓGICA DE ESTILOS:
-            Se activa (se achica y rota) SI:
-            1. 'isLocked' es true (Click)
-            OR
-            2. 'group-hover' está activo (Mouse encima)
-        */}
-        <div 
-            className={`absolute inset-4 lg:inset-8 z-10 transition-all duration-700 ease-out 
-            ${isLocked 
-                ? "scale-[0.90] -rotate-3 opacity-60"  // Si está fijado con click
-                : "group-hover:scale-[0.90] group-hover:-rotate-3 group-hover:opacity-60" // Si pasas el mouse
-            }`}
+        {/* Usamos motion.div para aplicar los valores de useTransform (style) */}
+        <motion.div 
+            style={{ 
+              scale: scaleBase, 
+              opacity: opacityBase,
+              rotate: rotateBase
+            }}
+            className="absolute inset-4 lg:inset-8 z-10 origin-center"
         >
             <img
             src={imageSrc}
             alt={`${title} main view`}
             className="w-full h-full object-cover rounded-xl shadow-lg border border-white/10"
             />
-        </div>
+        </motion.div>
 
         {/* IMAGEN 2: Overlay (Mobile/Detalle) */}
-        {/* LÓGICA DE ESTILOS:
-            Se muestra (sube) SI:
-            1. 'isLocked' es true (Click)
-            OR
-            2. 'group-hover' está activo (Mouse encima)
-        */}
-        <div 
-            className={`absolute bottom-0 right-0 w-[85%] md:w-[80%] lg:w-[75%] z-20 transition-all duration-700 ease-out 
-            ${isLocked
-                ? "translate-y-0 rotate-0" 
-                : "translate-y-[110%] rotate-6 group-hover:translate-y-0 group-hover:rotate-0"
-            }`}
+        <motion.div 
+            style={{ 
+              y: yOverlay, // Controlado por el scroll
+              rotate: rotateOverlay 
+            }}
+            className="absolute bottom-0 right-0 w-[85%] md:w-[80%] lg:w-[75%] z-20 origin-bottom-right"
         >
             <img
             src={overlayImage}
             alt={`${title} detail view`}
             className="w-full h-auto object-cover rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-none shadow-2xl border-t border-l border-white/10 ring-1 ring-black/40"
             />
-        </div>
+        </motion.div>
       </div>
 
       {/* --- INFO (Sin cambios) --- */}
