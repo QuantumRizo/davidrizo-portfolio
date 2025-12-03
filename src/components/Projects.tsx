@@ -10,7 +10,7 @@ const Projects = () => {
   // Ejemplo de cómo quedaría tu array de datos:
 const featuredProjects = [
   {
-    title: "CentralSimi (Provider Portal)",
+    title: "Central Simi Portal",
     imageSrc: "/simiProject1.png",
     secondaryImageSrc: "/simiProject2.png", // <--- AÑADIR ESTO
     description:
@@ -30,8 +30,8 @@ const featuredProjects = [
   },
   {
     title: "Summer Camp Web Page",
-    imageSrc: "/summercamp.jpg",
-    secondaryImageSrc: "/summerCamp2.png", 
+    imageSrc: "/summerCamp2.png",
+    secondaryImageSrc: "/summercamp.jpg", 
     description:
       "Modern and responsive landing page developed with React and TailwindCSS. Combines dynamic visuals and clean UX to showcase camp programs, drive engagement, and facilitate online registration.",
     technologies: ["React", "TailwindCSS", "Responsive Design"],
