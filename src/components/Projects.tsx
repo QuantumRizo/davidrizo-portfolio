@@ -25,7 +25,7 @@ const featuredProjects = [
     description:
       "Dental appointment platform featuring a custom backend powered by Supabase and Google Calendar API integration. Handles secure patient scheduling, automated syncing of events, data validation workflows, and a streamlined UI that enhances booking reliability and real-time availability management.",
     technologies: ["React", "Vite", "Supabase", "Google Calendar API", "TailwindCSS"],
-    projectUrl: "/projects/paris-rizo-dental",
+    projectUrl: "https://paris-rizo-dental.vercel.app/",
   },
   {
     title: "Natalia Muñoz Industrial Portfolio",
@@ -34,7 +34,7 @@ const featuredProjects = [
     description:
       "High-fidelity industrial design portfolio with a strong visual identity, dynamic hero animation, and responsive UI. Built with modern front-end tooling to deliver smooth transitions, an immersive presentation layer, and optimized asset handling for a premium designer showcase experience.",
     technologies: ["React", "Vite", "GSAP", "TailwindCSS", "Responsive Design"],
-    projectUrl: "/projects/natalia-munoz-portfolio",
+    projectUrl: "https://nataliamunoz.art",
   },
   {
     title: "Galaxy Classification",
