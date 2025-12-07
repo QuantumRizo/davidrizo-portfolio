@@ -12,30 +12,39 @@ const featuredProjects = [
   {
     title: "Central Simi Portal",
     imageSrc: "/simiProject1.png",
-    secondaryImageSrc: "/simiProject2.png", // <--- AÑADIR ESTO
+    secondaryImageSrc: "/simiProject2.png",
     description:
       "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records.",
     technologies: ["React", "Vite", "Supabase", "PostgreSQL", "TailwindCSS"],
     projectUrl: "/projects/central-simi",
   },
   {
+    title: "Paris Rizo Dental",
+    imageSrc: "/dentistProject1.png",
+    secondaryImageSrc: "/dentistProject2.png",
+    description:
+      "Dental appointment platform featuring a custom backend powered by Supabase and Google Calendar API integration. Handles secure patient scheduling, automated syncing of events, data validation workflows, and a streamlined UI that enhances booking reliability and real-time availability management.",
+    technologies: ["React", "Vite", "Supabase", "Google Calendar API", "TailwindCSS"],
+    projectUrl: "/projects/paris-rizo-dental",
+  },
+  {
+    title: "Natalia Muñoz Industrial Portfolio",
+    imageSrc: "/nataliaPortfolio1.png",
+    secondaryImageSrc: "/nataliaPortfolio2.png",
+    description:
+      "High-fidelity industrial design portfolio with a strong visual identity, dynamic hero animation, and responsive UI. Built with modern front-end tooling to deliver smooth transitions, an immersive presentation layer, and optimized asset handling for a premium designer showcase experience.",
+    technologies: ["React", "Vite", "GSAP", "TailwindCSS", "Responsive Design"],
+    projectUrl: "/projects/natalia-munoz-portfolio",
+  },
+  {
     title: "Galaxy Classification",
     imageSrc: "/galaxyProject1.jpg",
-    secondaryImageSrc: "/galaxyProject2.jpg", // <--- AÑADIR ESTO
+    secondaryImageSrc: "/galaxyProject2.jpg",
     description:
       "Deep learning system that classifies galaxies as Active Galactic Nuclei (AGN) or Starburst using FITS spectroscopic data from SDSS. Combines Python, Astropy, and scikit-learn to extract spectral features and achieve high-precision astrophysical classification.",
     technologies: ["Python", "Astropy", "scikit-learn", "Deep Learning"],
     githubUrl: "https://github.com/QuantiumRizo/agn-starburst-galaxy-classifier",
     projectUrl: "/projects/galaxy-classification",
-  },
-  {
-    title: "Summer Camp Web Page",
-    imageSrc: "/summerCamp2.png",
-    secondaryImageSrc: "/summercamp.jpg", 
-    description:
-      "Modern and responsive landing page developed with React and TailwindCSS. Combines dynamic visuals and clean UX to showcase camp programs, drive engagement, and facilitate online registration.",
-    technologies: ["React", "TailwindCSS", "Responsive Design"],
-    projectUrl: "/projects/summer-camp",
   },
 ];
 
