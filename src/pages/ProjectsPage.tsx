@@ -1,101 +1,71 @@
 import { motion } from "framer-motion";
-import ProjectCard from "@/components/ProjectCard";
-import {
-  Globe,
-  BarChart3,
-  Brain,
-  DatabaseZap,
-  Tent,
-  LayoutDashboard,
-  ArrowLeft,
-} from "lucide-react";
+import ProjectCaseStudy from "@/components/ProjectCaseStudy";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ProjectsPage = () => {
-  const projects = [
-  {
-    icon: <Globe className="size-8 text-primary" />,
-    title: "Galaxy Classification",
-    imageSrc: "/galaxy.jpg",
-    description:
-      "Deep learning system that classifies galaxies as Active Galactic Nuclei (AGN) or Starburst using FITS spectroscopic data from SDSS. Combines Python, Astropy, and scikit-learn to extract spectral features and achieve high-precision astrophysical classification.",
-    githubUrl: "https://github.com/QuantumRizo/agn-starburst-galaxy-classifier",
-    projectUrl: "/projects/galaxy-classification",
-  },
-  {
-    icon: <DatabaseZap className="size-8 text-primary" />,
-    title: "CentralSimi (Provider Portal)",
-    imageSrc: "/centralsimi.jpg",
-    description:
-      "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records.",
-    projectUrl: "/projects/central-simi",
-  },
-  {
-    icon: <BarChart3 className="size-8 text-primary" />,
-    title: "Telco Churn Prediction",
-    imageSrc: "/churn.jpg",
-    description:
-      "AI-driven model to predict customer churn in telecom datasets using TensorFlow and scikit-learn. Features advanced preprocessing, neural networks, and performance optimization to identify high-risk clients and enhance retention strategies.",
-    githubUrl: "https://github.com/QuantumRizo/Telco_Churn",
-    projectUrl: "/projects/telco-churn",
-  },
-  {
-    icon: <LayoutDashboard className="size-8 text-primary" />,
-    title: "Marketing Campaign Dashboard",
-    imageSrc: "/dashboard.jpg",
-    description:
-      "Interactive data visualization dashboard integrating Google Ads, Programmatic, and GA4 metrics. Designed to monitor marketing KPIs, optimize campaigns, and present performance insights in real time.",
-    projectUrl: "/projects/campaign-dashboard",
-  },
-  {
-    icon: <Brain className="size-8 text-primary" />,
-    title: "Brain Tumor Detection",
-    imageSrc: "/brain.jpg",
-    description:
-      "Convolutional Neural Network that classifies MRI brain scans for tumor detection. Utilizes TensorFlow, OpenCV, and data augmentation to achieve high diagnostic accuracy and support medical image analysis workflows.",
-    githubUrl: "https://github.com/QuantumRizo/Brain-Tumor-Classification",
-    projectUrl: "/projects/brain-tumor-detection",
-  },
-  {
-    icon: <Tent className="size-8 text-primary" />,
-    title: "Summer Camp Web Page",
-    imageSrc: "/summercamp.jpg",
-    description:
-      "Modern and responsive landing page developed with React and TailwindCSS. Combines dynamic visuals and clean UX to showcase camp programs, drive engagement, and facilitate online registration.",
-    projectUrl: "/projects/summer-camp",
-  },
-];
+  const featuredProjects = [
+    {
+      title: "Central Simi Portal",
+      imageSrc: "/simiProject1.png",
+      secondaryImageSrc: "/simiProject2.png",
+      description:
+        "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records.",
+      technologies: ["React", "Vite", "Supabase", "PostgreSQL", "TailwindCSS"],
+      projectUrl: "/projects/central-simi",
+    },
+    {
+      title: "Paris Rizo Dental",
+      imageSrc: "/dentistProject1.png",
+      secondaryImageSrc: "/dentistProject2.png",
+      description:
+        "Dental appointment platform featuring a custom backend powered by Supabase and Google Calendar API integration. Handles secure patient scheduling, automated syncing of events, data validation workflows, and a streamlined UI that enhances booking reliability and real-time availability management.",
+      technologies: ["React", "Vite", "Supabase", "Google Calendar API", "TailwindCSS"],
+      projectUrl: "https://paris-rizo-dental.vercel.app/",
+    },
+    {
+      title: "Natalia Muñoz Industrial Portfolio",
+      imageSrc: "/nataliaPortfolio1.png",
+      secondaryImageSrc: "/nataliaPortfolio2.png",
+      description:
+        "High-fidelity industrial design portfolio with a strong visual identity, dynamic hero animation, and responsive UI. Built with modern front-end tooling to deliver smooth transitions, an immersive presentation layer, and optimized asset handling for a premium designer showcase experience.",
+      technologies: ["React", "Vite", "GSAP", "TailwindCSS", "Responsive Design"],
+      projectUrl: "https://nataliamunoz.art",
+    },
+    {
+      title: "Galaxy Classification",
+      imageSrc: "/galaxyProject1.jpg",
+      secondaryImageSrc: "/galaxyProject2.jpg",
+      description:
+        "Deep learning system that classifies galaxies as Active Galactic Nuclei (AGN) or Starburst using FITS spectroscopic data from SDSS. Combines Python, Astropy, and scikit-learn to extract spectral features and achieve high-precision astrophysical classification.",
+      technologies: ["Python", "Astropy", "scikit-learn", "Deep Learning"],
+      githubUrl: "https://github.com/QuantiumRizo/agn-starburst-galaxy-classifier",
+      projectUrl: "/projects/galaxy-classification",
+    },
+  ];
 
   return (
-    <section className="py-24 px-4 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-card to-background opacity-50" />
-
+    <section className="py-20 px-4 relative bg-black text-white min-h-screen">
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold mb-4">
-            <span className="gradient-text">Projects</span>
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A complete showcase of my work across data science, AI, and web
-            development.
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">Project Archives</h1>
+          <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
+            A complete showcase of my work across data science, AI, and web development.
           </p>
         </motion.div>
 
-        {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.title} {...project} delay={index * 0.1} />
+        <div className="flex flex-col gap-24">
+          {featuredProjects.map((project, index) => (
+            <ProjectCaseStudy key={project.title} {...project} index={index} />
           ))}
         </div>
 
-        {/* Back to Home button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -105,7 +75,7 @@ const ProjectsPage = () => {
           <Link to="/">
             <Button
               variant="outline"
-              className="group text-lg px-6 py-3 rounded-xl border-primary text-primary hover:bg-primary hover:text-background transition-all"
+              className="group text-lg px-6 py-3 rounded-full border-neutral-700 text-white hover:bg-neutral-900 transition-all"
             >
               <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" />
               Back to Home
