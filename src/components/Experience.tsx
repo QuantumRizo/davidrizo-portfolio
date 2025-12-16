@@ -44,7 +44,7 @@ const Experience = () => {
     {
       title: "Data Intern",
       company: "Navigatis Radiance (Mexico City)",
-      period: "2024",
+      period: "2022",
       description:
         "Supported data-driven operations by managing and maintaining structured databases to ensure data integrity, consistency, and availability across internal systems. Assisted in data cleaning, validation, and basic analysis, contributing to reliable reporting and more efficient operational decision-making.",
       skills: ["SQL", "Data Management", "Data Cleaning", "Reporting", "Operational Analytics"],
