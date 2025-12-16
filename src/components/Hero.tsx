@@ -96,8 +96,8 @@ const ScrambledTitle: React.FC = () => {
     if (mounted && scramblerRef.current) {
       const phrases = [
         "Hello, I'm David Rizo",
-        "Software Developer",
-        "Physicist & Data Scientist",
+        "Software Engineer & Data Scientist",
+        "Turning ideas into reliable software",
       ]
 
       let counter = 0

@@ -1,68 +1,86 @@
+// Mantenemos React para el componente
 import React from "react";
-// Importamos los iconos desde la librería que acabas de instalar
-import { FaPython, FaReact, FaGitAlt } from "react-icons/fa";
-import { SiTensorflow, SiPostgresql, SiSupabase, SiScikitlearn, SiTailwindcss, SiVite, SiGooglecloud } from "react-icons/si";
 
 const technologies = [
-  { 
-    name: "Python", 
-    // Amarillo oficial de Python
-    color: "text-[#FFD43B]", 
-    icon: <FaPython className="w-8 h-8" /> 
+  {
+    name: "Python",
+    color: "#FFD43B",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
   },
-  { 
-    name: "React", 
-    // Azul cian oficial de React
-    color: "text-[#61DAFB]", 
-    icon: <FaReact className="w-8 h-8" /> 
+  {
+    name: "React",
+    color: "#61DAFB",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
   },
-  { 
-    name: "TensorFlow", 
-    // Naranja oficial
-    color: "text-[#FF6F00]", 
-    icon: <SiTensorflow className="w-8 h-8" /> 
+  {
+    name: "TensorFlow",
+    color: "#FF6F00",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg"
   },
-  { 
-    name: "PostgreSQL", 
-    // Azul elefante oficial
-    color: "text-[#336791]", 
-    icon: <SiPostgresql className="w-8 h-8" /> 
+  {
+    name: "PostgreSQL",
+    color: "#336791",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
   },
-  { 
-    name: "Supabase", 
-    // Verde esmeralda oficial
-    color: "text-[#3ECF8E]", 
-    icon: <SiSupabase className="w-8 h-8" /> 
+  {
+    name: "Supabase",
+    color: "#3ECF8E",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
   },
-  { 
-    name: "Scikit-learn", 
-    // Naranja oficial
-    color: "text-[#F7931E]", 
-    icon: <SiScikitlearn className="w-8 h-8" /> 
+  {
+    name: "Scikit-learn",
+    color: "#F7931E",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
   },
-  { 
-    name: "Tailwind", 
-    // Cyan oficial
-    color: "text-[#06B6D4]", 
-    icon: <SiTailwindcss className="w-8 h-8" /> 
+  {
+    name: "Tailwind",
+    color: "#06B6D4",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
   },
-  { 
-    name: "Vite", 
-    // Violeta oficial
-    color: "text-[#646CFF]", 
-    icon: <SiVite className="w-8 h-8" /> 
+  {
+    name: "Vite",
+    color: "#646CFF",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
   },
-  { 
-    name: "Git", 
-    // Rojo/Naranja oficial
-    color: "text-[#F05032]", 
-    icon: <FaGitAlt className="w-8 h-8" /> 
+  {
+    name: "Power BI",
+    color: "#F2C811",
+    iconUrl: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
   },
-  { 
-    name: "Google Cloud", 
-    // Azul brillante oficial de Google
-    color: "text-[#4285F4]", 
-    icon: <SiGooglecloud className="w-8 h-8" /> 
+  {
+    name: "TypeScript",
+    color: "#3178C6",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+  },
+  {
+    name: "Pandas",
+    color: "#150458",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+  },
+  {
+    name: "NumPy",
+    color: "#013243",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
+  },
+  {
+    name: "Linux",
+    color: "#FCC624",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+  },
+  {
+    name: "Node.js",
+    color: "#339933",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+  },
+  {
+    name: "Git",
+    color: "#F05032",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+  },
+  {
+    name: "Google Cloud",
+    color: "#4285F4",
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg"
   },
 ];
 
@@ -100,8 +118,15 @@ const TechStack = () => {
               key={index}
               className="flex flex-col items-center gap-2 px-8 min-w-[140px] group transition-all duration-300 hover:scale-110 cursor-default"
             >
-              <div className={`transition-all duration-300 drop-shadow-lg ${tech.color} group-hover:scale-110`}>
-                {tech.icon}
+              <div
+                className="transition-all duration-300 drop-shadow-lg group-hover:scale-110"
+                style={{ filter: `drop-shadow(0 0 5px ${tech.color}80)` }}
+              >
+                <img
+                  src={tech.iconUrl}
+                  alt={tech.name}
+                  className="w-10 h-10 object-contain" // Use w-10 h-10 for slightly better visibility with images
+                />
               </div>
               <span className="text-gray-500 font-mono text-sm group-hover:text-white transition-colors">
                 {tech.name}

@@ -3,49 +3,69 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // CORRECCIÓN 1: CONTROL DE LA LÍNEA
   // offset: ["start 80%", "end end"]
   // Significa: "Empieza a llenar la barra cuando el top de la sección esté al 80% de la pantalla
   // y termina cuando el final de la sección llegue al centro".
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 70%", "end end"] 
+    offset: ["start center", "end center"]
   });
 
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const experiences = [
     {
-      title: "Data Scientist",
-      company: "Central de Negocios MX",
+      title: "Data Scientist & Web Developer",
+      company: "",
       period: "Current",
-      description: "Leading data science initiatives, developing ML models, and creating actionable insights from complex datasets.",
-      skills: ["Python", "Machine Learning", "SQL", "Power BI"],
+      description:
+        "Leading the design and development of data-driven products by combining statistical analysis, machine learning, and modern web development. Building scalable data pipelines, analytical models, and interactive web applications that transform complex data into actionable insights and user-focused solutions.",
+      skills: [
+        "Python",
+        "Machine Learning",
+        "SQL",
+        "Power BI",
+        "Web Development",
+        "Data Visualization"
+      ],
       current: true
     },
     {
       title: "Coding Program Lead",
-      company: "French Woods Festival",
+      company: "French Woods Festival (New York, USA)",
       period: "2025 - 2026",
-      description: "Led comprehensive coding program, teaching programming fundamentals and web development to students.",
-      skills: ["Teaching", "Coding", "Leadership"],
+      description:
+        "Directed and delivered a comprehensive coding program, teaching programming fundamentals and web development concepts to students. Designed structured learning materials, guided hands-on projects, and fostered problem-solving and logical thinking in a collaborative learning environment.",
+      skills: ["Teaching", "Programming", "Web Development", "Leadership", "Mentorship"],
+      current: false
+    },
+    {
+      title: "Data Intern",
+      company: "Navigatis Radiance (Mexico City)",
+      period: "2024",
+      description:
+        "Supported data-driven operations by managing and maintaining structured databases to ensure data integrity, consistency, and availability across internal systems. Assisted in data cleaning, validation, and basic analysis, contributing to reliable reporting and more efficient operational decision-making.",
+      skills: ["SQL", "Data Management", "Data Cleaning", "Reporting", "Operational Analytics"],
       current: false
     },
     {
       title: "B.Sc. in Physics",
       company: "UNAM",
       period: "2020 - 2024",
-      description: "Completed a rigorous program in theoretical and experimental physics, building a strong foundation in mathematics.",
-      skills: ["Physics", "Team Work", "Research", "Problem Solving"],
+      description:
+        "Completed a rigorous undergraduate program in theoretical and experimental physics, developing a strong foundation in mathematics, analytical reasoning, and scientific problem-solving. Applied quantitative methods to model complex systems and analyze data in research-oriented environments.",
+      skills: ["Physics", "Applied Mathematics", "Research", "Analytical Thinking", "Problem Solving"],
       current: false
     }
   ];
 
+
   return (
     <section className="py-24 px-4 relative" ref={containerRef}>
       <div className="max-w-4xl mx-auto">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,20 +80,29 @@ const Experience = () => {
         </motion.div>
 
         <div className="relative pl-8 md:pl-0">
-          
+
           {/* BARRA ESTATICA */}
           <div className="absolute left-0 md:left-[50%] top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2 hidden md:block" />
-          
+
           {/* BARRA ANIMADA */}
-          <motion.div 
-            style={{ scaleY: scrollYProgress }} 
+          <motion.div
+            style={{ scaleY: scrollYProgress }}
             className="absolute left-0 md:left-[50%] top-0 bottom-0 w-[2px] bg-white origin-top -translate-x-1/2 shadow-[0_0_15px_rgba(255,255,255,0.6)] hidden md:block"
+          />
+
+          {/* INDICADOR QUE SIGUE EL SCROLL (BOLITA) */}
+          <motion.div
+            style={{
+              top: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+              opacity: useTransform(scrollYProgress, [0, 0.05], [0, 1])
+            }}
+            className="absolute left-0 md:left-[50%] w-[18px] h-[18px] rounded-full bg-white z-20 -translate-x-1/2 shadow-[0_0_20px_rgba(255,255,255,0.8)] border border-white hidden md:block"
           />
 
           <div className="space-y-16">
             {experiences.map((exp, index) => (
               <div key={index} className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                
+
                 {/* PUNTO CENTRAL */}
                 <div className="absolute left-[-33px] md:left-[50%] top-0 w-4 h-4 rounded-full bg-black border-2 border-white z-10 -translate-x-1/2 shadow-[0_0_10px_rgba(255,255,255,0.4)]">
                   {exp.current && (
@@ -83,9 +112,9 @@ const Experience = () => {
 
                 <div className="flex-1 hidden md:block" />
 
-                {/* CORRECCIÓN 2: ANIMACIÓN DE LAS TARJETAS */}
+                {/* CORRECCIÓN 2: ANIMACIÓN DE LAS TARJETAS (DE AFUERA HACIA ADENTRO) */}
                 <motion.div
-                  initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   // IMPORTANTE: margin negativo mueve la línea de trigger hacia arriba
                   // "-150px" obliga al usuario a scrollear 150px MÁS para que aparezca la tarjeta
@@ -94,7 +123,7 @@ const Experience = () => {
                   className="flex-1"
                 >
                   <div className="glass-card p-6 rounded-2xl relative group hover:scale-[1.02] transition-transform duration-300 border-white/10 hover:border-white/30">
-                    
+
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h3 className="text-xl font-bold text-white mb-1">{exp.title}</h3>
@@ -121,6 +150,11 @@ const Experience = () => {
                 </motion.div>
               </div>
             ))}
+          </div>
+
+          {/* Espacio extra para extender la línea al final */}
+          <div className="h-40 relative">
+            {/* Opcional: algún elemento final o solo espacio */}
           </div>
 
         </div>
