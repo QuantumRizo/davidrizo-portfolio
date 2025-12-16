@@ -82,12 +82,12 @@ const Experience = () => {
         <div className="relative pl-8 md:pl-0">
 
           {/* BARRA ESTATICA */}
-          <div className="absolute left-0 md:left-[50%] top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2 hidden md:block" />
+          <div className="absolute left-0 md:left-[50%] top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2" />
 
           {/* BARRA ANIMADA */}
           <motion.div
             style={{ scaleY: scrollYProgress }}
-            className="absolute left-0 md:left-[50%] top-0 bottom-0 w-[2px] bg-white origin-top -translate-x-1/2 shadow-[0_0_15px_rgba(255,255,255,0.6)] hidden md:block"
+            className="absolute left-0 md:left-[50%] top-0 bottom-0 w-[2px] bg-white origin-top -translate-x-1/2 shadow-[0_0_15px_rgba(255,255,255,0.6)]"
           />
 
           {/* INDICADOR QUE SIGUE EL SCROLL (BOLITA) */}
@@ -96,7 +96,7 @@ const Experience = () => {
               top: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
               opacity: useTransform(scrollYProgress, [0, 0.05], [0, 1])
             }}
-            className="absolute left-0 md:left-[50%] w-[18px] h-[18px] rounded-full bg-white z-20 -translate-x-1/2 shadow-[0_0_20px_rgba(255,255,255,0.8)] border border-white hidden md:block"
+            className="absolute left-0 md:left-[50%] w-[18px] h-[18px] rounded-full bg-white z-20 -translate-x-1/2 shadow-[0_0_20px_rgba(255,255,255,0.8)] border border-white"
           />
 
           <div className="space-y-16">
