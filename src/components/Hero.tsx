@@ -20,7 +20,7 @@ class TextScramble {
 
   constructor(el: HTMLElement) {
     this.el = el
-    this.chars = '!<>-_\\/[]{}—=+*^?#'
+    this.chars = '!<>-_\\/[]{}ñ—=+*^?#'
     this.queue = []
     this.frame = 0
     this.frameRequest = 0
