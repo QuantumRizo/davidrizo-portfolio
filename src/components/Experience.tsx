@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Experience = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
 
   // CORRECCIÓN 1: CONTROL DE LA LÍNEA
@@ -17,11 +19,10 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: "Data Scientist & Web Developer",
-      company: "",
-      period: "Current",
-      description:
-        "Leading the design and development of data-driven products by combining statistical analysis, machine learning, and modern web development. Building scalable data pipelines, analytical models, and interactive web applications that transform complex data into actionable insights and user-focused solutions.",
+      title: t("experience.roles.current.title"),
+      company: t("experience.roles.current.company"),
+      period: t("experience.roles.current.period"),
+      description: t("experience.roles.current.description"),
       skills: [
         "Python",
         "Machine Learning",
@@ -33,29 +34,26 @@ const Experience = () => {
       current: true
     },
     {
-      title: "Coding Program Lead",
-      company: "French Woods Festival (New York, USA)",
-      period: "2025 - 2026",
-      description:
-        "Directed and delivered a comprehensive coding program, teaching programming fundamentals and web development concepts to students. Designed structured learning materials, guided hands-on projects, and fostered problem-solving and logical thinking in a collaborative learning environment.",
+      title: t("experience.roles.french_woods.title"),
+      company: t("experience.roles.french_woods.company"),
+      period: t("experience.roles.french_woods.period"),
+      description: t("experience.roles.french_woods.description"),
       skills: ["Teaching", "Programming", "Web Development", "Leadership", "Mentorship"],
       current: false
     },
     {
-      title: "Data Intern",
-      company: "Navigatis Radiance (Mexico City)",
-      period: "2022",
-      description:
-        "Supported data-driven operations by managing and maintaining structured databases to ensure data integrity, consistency, and availability across internal systems. Assisted in data cleaning, validation, and basic analysis, contributing to reliable reporting and more efficient operational decision-making.",
+      title: t("experience.roles.navigatis.title"),
+      company: t("experience.roles.navigatis.company"),
+      period: t("experience.roles.navigatis.period"),
+      description: t("experience.roles.navigatis.description"),
       skills: ["SQL", "Data Management", "Data Cleaning", "Reporting", "Operational Analytics"],
       current: false
     },
     {
-      title: "B.Sc. in Physics",
-      company: "UNAM",
-      period: "2020 - 2024",
-      description:
-        "Completed a rigorous undergraduate program in theoretical and experimental physics, developing a strong foundation in mathematics, analytical reasoning, and scientific problem-solving. Applied quantitative methods to model complex systems and analyze data in research-oriented environments.",
+      title: t("experience.roles.unam.title"),
+      company: t("experience.roles.unam.company"),
+      period: t("experience.roles.unam.period"),
+      description: t("experience.roles.unam.description"),
       skills: ["Physics", "Applied Mathematics", "Research", "Analytical Thinking", "Problem Solving"],
       current: false
     }
@@ -73,9 +71,9 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Experience</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">{t("experience.title")}</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A journey from theoretical physics to practical data science
+            {t("experience.subtitle")}
           </p>
         </motion.div>
 

@@ -1,0 +1,95 @@
+{
+    "translation": {
+        "nav": {
+            "home": "Inicio",
+            "about": "Sobre Mí",
+            "projects": "Proyectos",
+            "stack": "Stack",
+            "experience": "Experiencia",
+            "contact": "Contacto"
+        },
+        "hero": {
+            "title_1": "Hola, soy David Rizo",
+            "title_2": "Ingeniero de Software & Científico de Datos",
+            "title_3": "Convirtiendo ideas en software confiable",
+            "github": "GitHub",
+            "email": "Correo",
+            "whatsapp": "WhatsApp",
+            "linkedin": "LinkedIn"
+        },
+        "build_website": {
+            "title": "¿Necesitas un sitio web de alto rendimiento?",
+            "description": "Construyo experiencias digitales rápidas, accesibles e impresionantes. Hagamos realidad tu idea.",
+            "modern_design": "Diseño Moderno",
+            "fully_responsive": "Totalmente Responsive",
+            "seo_optimized": "Optimizado para SEO",
+            "floating_whatsapp": "WhatsApp Flotante",
+            "booking_system": "Sistema de Citas",
+            "cta": "Inicia tu proyecto"
+        },
+        "about": {
+            "title": "Sobre Mí",
+            "p1": "Soy Félix David Rizo Serrano — Científico de Datos e Ingeniero de Machine Learning enfocado en construir sistemas inteligentes y escalables. Trabajo en la intersección del aprendizaje automático, la ingeniería de datos y las tecnologías web modernas, convirtiendo problemas complejos en soluciones limpias e impactantes.",
+            "p2": "Desde pipelines de aprendizaje profundo e investigación en clasificación de galaxias hasta productos de IA basados en la nube, abordo cada proyecto con claridad, curiosidad y altos estándares. Mi objetivo es simple: crear tecnología que se sienta bien pensada, eficiente y genuinamente útil."
+        },
+        "experience": {
+            "title": "Experiencia Laboral",
+            "subtitle": "Un viaje desde la física teórica hacia la ciencia de datos aplicada",
+            "roles": {
+                "current": {
+                    "title": "Científico de Datos & Desarrollador Web",
+                    "company": "",
+                    "period": "Actualidad",
+                    "description": "Liderando el diseño y desarrollo de productos basados en datos combinando análisis estadístico, aprendizaje automático y desarrollo web moderno. Construyendo pipelines de datos escalables, modelos analíticos y aplicaciones web interactivas que transforman datos complejos en soluciones enfocadas al usuario."
+                },
+                "french_woods": {
+                    "title": "Líder del Programa de Programación",
+                    "company": "French Woods Festival (Nueva York, EE. UU.)",
+                    "period": "2025 - 2026",
+                    "description": "Dirigí un programa integral de programación, enseñando fundamentos y desarrollo web a estudiantes. Diseñé materiales de aprendizaje, guié proyectos prácticos y fomenté el pensamiento lógico y la resolución de problemas en un entorno colaborativo."
+                },
+                "navigatis": {
+                    "title": "Pasante de Datos",
+                    "company": "Navigatis Radiance (Ciudad de México)",
+                    "period": "2022",
+                    "description": "Apoyé operaciones basadas en datos gestionando y manteniendo bases de datos estructuradas. Asistí en limpieza, validación y análisis básico de datos, contribuyendo a reportes confiables y una toma de decisiones operativa más eficiente."
+                },
+                "unam": {
+                    "title": "Licenciatura en Física",
+                    "company": "UNAM",
+                    "period": "2020 - 2024",
+                    "description": "Completé un riguroso programa en física teórica y experimental, desarrollando una base sólida en matemáticas, razonamiento analítico y resolución de problemas científicos. Apliqué métodos cuantitativos para modelar sistemas complejos y analizar datos en entornos de investigación."
+                }
+            }
+        },
+        "projects": {
+            "title": "Proyectos Destacados",
+            "items": {
+                "central_simi": {
+                    "title": "Portal Central Simi",
+                    "description": "Plataforma de gestión legal full-stack construida con React (Vite) y Supabase. Implementa modelado de datos PostgreSQL, autenticación segura y flujos de trabajo automatizados para cargar, validar y gestionar registros de proveedores."
+                },
+                "dental": {
+                    "title": "Paris Rizo Dental",
+                    "description": "Plataforma de citas dentales con backend personalizado en Supabase e integración con Google Calendar. Maneja agenda segura de pacientes, sincronización automática de eventos y una UI simplificada para mejorar la confiabilidad de reservas."
+                },
+                "natalia": {
+                    "title": "Portafolio Industrial Natalia Muñoz",
+                    "description": "Portafolio de diseño industrial de alta fidelidad con identidad visual fuerte, animación hero dinámica y UI responsiva. Construido con herramientas modernas para entregar transiciones suaves y una experiencia de usuario premium."
+                },
+                "galaxy": {
+                    "title": "Clasificación de Galaxias",
+                    "description": "Sistema de aprendizaje profundo que clasifica galaxias como Núcleos Galácticos Activos (AGN) o Starburst usando datos espectroscópicos FITS del SDSS. Combina Python, Astropy y scikit-learn para extraer características espectrales y lograr clasificación astrofísica de alta precisión."
+                }
+            },
+            "cta": "Ver Todos los Archivos"
+        },
+        "stack": {
+            "title": "Stack Tecnológico",
+            "description": "Herramientas y tecnologías que uso para dar vida a las ideas."
+        },
+        "footer": {
+            "text": "Diseñado y construido por David Rizo"
+        }
+    }
+}
