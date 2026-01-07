@@ -1,5 +1,6 @@
 // Mantenemos React para el componente
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const technologies = [
   {
@@ -85,10 +86,12 @@ const technologies = [
 ];
 
 const TechStack = () => {
+  const { t } = useTranslation(); // HOOK
+
   return (
     <section className="py-20 bg-black overflow-hidden relative">
       <h2 className="text-center text-white text-3xl font-bold mb-12 tracking-wider">
-        TECH ARSENAL
+        {t("stack.title").toUpperCase()}
       </h2>
 
       <style>{`

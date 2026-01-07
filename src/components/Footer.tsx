@@ -1,22 +1,24 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useTranslation } from "react-i18next"; // AQUI
 
 const Footer = () => {
+  const { t } = useTranslation(); // HOOK
   const socialLinks = [
     {
       icon: Github,
       href: "https://github.com/QuantumRizo",
-      label: "GitHub"
+      label: t("hero.github") // Reusing hero keys as they are the same
     },
     {
       icon: Linkedin,
       href: "https://linkedin.com/in/felix-rizo-dev",
-      label: "LinkedIn"
+      label: t("hero.linkedin")
     },
     {
       icon: Mail,
       href: "mailto:davidrizo.phys@gmail.com",
-      label: "Email"
+      label: t("hero.email")
     }
   ];
 
@@ -34,7 +36,7 @@ const Footer = () => {
             background: "linear-gradient( transparent, hsla(0, 0%, 100%, 1.00)"
           }}
         />
-        
+
         <div className="flex flex-col items-center gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -59,8 +61,8 @@ const Footer = () => {
               );
             })}
           </motion.div>
-      
-          
+
+
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -68,7 +70,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-muted-foreground/70 text-xs"
           >
-            © 2025 David Rizo. All rights reserved.
+            {t("footer.text")}
           </motion.p>
         </div>
       </div>

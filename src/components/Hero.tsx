@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, MessageCircle } from "lucide-react"
+import { useTranslation } from "react-i18next";
 
 // --- CLASE PARA EL TEXTO ENCRIPTADO (SCRAMBLE) ---
 class TextScramble {
@@ -24,7 +25,7 @@ class TextScramble {
     this.queue = []
     this.frame = 0
     this.frameRequest = 0
-    this.resolve = () => {}
+    this.resolve = () => { }
     this.update = this.update.bind(this)
   }
 
@@ -81,9 +82,27 @@ class TextScramble {
 
 // --- COMPONENTE DEL TÍTULO ---
 const ScrambledTitle: React.FC = () => {
+  const { t, i18n } = useTranslation(); // HOOK
   const elementRef = useRef<HTMLHeadingElement>(null)
   const scramblerRef = useRef<TextScramble | null>(null)
   const [mounted, setMounted] = useState(false)
+
+  // Use a ref to store phrases so the animation loop always accesses the latest translation
+  // without needing to restart the effect/loop.
+  const phrasesRef = useRef([
+    t("hero.title_1"),
+    t("hero.title_2"),
+    t("hero.title_3"),
+  ]);
+
+  // Update phrases when language changes
+  useEffect(() => {
+    phrasesRef.current = [
+      t("hero.title_1"),
+      t("hero.title_2"),
+      t("hero.title_3"),
+    ];
+  }, [t, i18n.language]);
 
   useEffect(() => {
     if (elementRef.current && !scramblerRef.current) {
@@ -94,14 +113,9 @@ const ScrambledTitle: React.FC = () => {
 
   useEffect(() => {
     if (mounted && scramblerRef.current) {
-      const phrases = [
-        "Hello, I'm David Rizo",
-        "Software Engineer & Data Scientist",
-        "Turning ideas into reliable software",
-      ]
-
       let counter = 0
       const next = () => {
+        const phrases = phrasesRef.current; // Read from ref
         scramblerRef.current!.setText(phrases[counter]).then(() => {
           setTimeout(next, 2500)
         })
@@ -125,25 +139,27 @@ const ScrambledTitle: React.FC = () => {
 
 // --- HERO PRINCIPAL --- 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   const links = [
     {
       icon: <Github className="size-5 text-primary" />,
-      label: "GitHub",
+      label: t("hero.github"),
       href: "https://github.com/QuantumRizo",
     },
     {
       icon: <Mail className="size-5 text-primary" />,
-      label: "Email",
+      label: t("hero.email"),
       href: "mailto:davidrizo.phys@gmail.com",
     },
     {
       icon: <MessageCircle className="size-5 text-primary" />,
-      label: "WhatsApp",
+      label: t("hero.whatsapp"),
       href: "https://wa.me/525624290009",
     },
     {
       icon: <Linkedin className="size-5 text-primary" />,
-      label: "LinkedIn",
+      label: t("hero.linkedin"),
       href: "https://www.linkedin.com/in/felix-rizo-dev/",
     },
   ]

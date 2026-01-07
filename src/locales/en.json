@@ -1,0 +1,95 @@
+{
+    "translation": {
+        "nav": {
+            "home": "Home",
+            "about": "About",
+            "projects": "Projects",
+            "stack": "Tech Stack",
+            "experience": "Experience",
+            "contact": "Contact"
+        },
+        "hero": {
+            "title_1": "Hello, I'm David Rizo",
+            "title_2": "Software Engineer & Data Scientist",
+            "title_3": "Turning ideas into reliable software",
+            "github": "GitHub",
+            "email": "Email",
+            "whatsapp": "WhatsApp",
+            "linkedin": "LinkedIn"
+        },
+        "build_website": {
+            "title": "Need a High-Performance Website?",
+            "description": "I build digital experiences that are fast, accessible, and stunning. Let's turn your idea into a reality.",
+            "modern_design": "Modern Design",
+            "fully_responsive": "Fully Responsive",
+            "seo_optimized": "SEO Optimized",
+            "floating_whatsapp": "Floating WhatsApp",
+            "booking_system": "Booking System",
+            "cta": "Start Your Project"
+        },
+        "about": {
+            "title": "About Me",
+            "p1": "I’m Félix David Rizo Serrano — a Data Scientist and ML Engineer focused on building intelligent, scalable systems. I work at the intersection of machine learning, data engineering, and modern web technologies, turning complex problems into clean and impactful solutions.",
+            "p2": "From deep learning pipelines and galaxy classification research to cloud-based AI products, I approach every project with clarity, curiosity, and high standards. My goal is simple: build technology that feels thoughtful, efficient, and genuinely useful."
+        },
+        "experience": {
+            "title": "Work Experience",
+            "subtitle": "A journey from theoretical physics to practical data science",
+            "roles": {
+                "current": {
+                    "title": "Data Scientist & Web Developer",
+                    "company": "",
+                    "period": "Current",
+                    "description": "Leading the design and development of data-driven products by combining statistical analysis, machine learning, and modern web development. Building scalable data pipelines, analytical models, and interactive web applications that transform complex data into actionable insights and user-focused solutions."
+                },
+                "french_woods": {
+                    "title": "Coding Program Lead",
+                    "company": "French Woods Festival (New York, USA)",
+                    "period": "2025 - 2026",
+                    "description": "Directed and delivered a comprehensive coding program, teaching programming fundamentals and web development concepts to students. Designed structured learning materials, guided hands-on projects, and fostered problem-solving and logical thinking in a collaborative learning environment."
+                },
+                "navigatis": {
+                    "title": "Data Intern",
+                    "company": "Navigatis Radiance (Mexico City)",
+                    "period": "2022",
+                    "description": "Supported data-driven operations by managing and maintaining structured databases to ensure data integrity, consistency, and availability across internal systems. Assisted in data cleaning, validation, and basic analysis, contributing to reliable reporting and more efficient operational decision-making."
+                },
+                "unam": {
+                    "title": "B.Sc. in Physics",
+                    "company": "UNAM",
+                    "period": "2020 - 2024",
+                    "description": "Completed a rigorous undergraduate program in theoretical and experimental physics, developing a strong foundation in mathematics, analytical reasoning, and scientific problem-solving. Applied quantitative methods to model complex systems and analyze data in research-oriented environments."
+                }
+            }
+        },
+        "projects": {
+            "title": "Featured Projects",
+            "items": {
+                "central_simi": {
+                    "title": "Central Simi Portal",
+                    "description": "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records."
+                },
+                "dental": {
+                    "title": "Paris Rizo Dental",
+                    "description": "Dental appointment platform featuring a custom backend powered by Supabase and Google Calendar API integration. Handles secure patient scheduling, automated syncing of events, data validation workflows, and a streamlined UI that enhances booking reliability and real-time availability management."
+                },
+                "natalia": {
+                    "title": "Natalia Muñoz Industrial Portfolio",
+                    "description": "High-fidelity industrial design portfolio with a strong visual identity, dynamic hero animation, and responsive UI. Built with modern front-end tooling to deliver smooth transitions, an immersive presentation layer, and optimized asset handling for a premium designer showcase experience."
+                },
+                "galaxy": {
+                    "title": "Galaxy Classification",
+                    "description": "Deep learning system that classifies galaxies as Active Galactic Nuclei (AGN) or Starburst using FITS spectroscopic data from SDSS. Combines Python, Astropy, and scikit-learn to extract spectral features and achieve high-precision astrophysical classification."
+                }
+            },
+            "cta": "View All Archives"
+        },
+        "stack": {
+            "title": "Tech Stack",
+            "description": "Tools and technologies I use to bring ideas to life."
+        },
+        "footer": {
+            "text": "Designed and built by David Rizo"
+        }
+    }
+}

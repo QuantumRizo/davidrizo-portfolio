@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export default function About() {
+  const { t } = useTranslation();
   return (
     <section
       id="about"
@@ -6,27 +9,21 @@ export default function About() {
     >
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        
+
         {/* TEXT */}
         <div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About Me
+            {t("about.title")}
           </h2>
-          
+
           {/* AQUI ESTÁ EL CAMBIO: text-lg y leading-relaxed */}
           <p className="text-lg leading-relaxed text-gray-300">
-            I’m Félix David Rizo Serrano — a Data Scientist and ML Engineer focused on
-            building intelligent, scalable systems. I work at the intersection of machine
-            learning, data engineering, and modern web technologies, turning complex 
-            problems into clean and impactful solutions.
+            {t("about.p1")}
           </p>
 
           {/* AQUI TAMBIÉN */}
           <p className="mt-4 text-lg leading-relaxed text-gray-300">
-            From deep learning pipelines and galaxy classification research to
-            cloud-based AI products, I approach every project with clarity, curiosity,
-            and high standards. My goal is simple: build technology that feels thoughtful,
-            efficient, and genuinely useful.
+            {t("about.p2")}
           </p>
         </div>
 
