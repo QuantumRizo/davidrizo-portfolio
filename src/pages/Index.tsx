@@ -5,7 +5,7 @@ import Experience from "@/components/Experience";
 import About from "@/components/About";
 import TechStack from "@/components/TechStack";
 
-import BuildWebsiteSection from "@/components/BuildWebsiteSection";
+
 
 const Index = () => {
   return (
@@ -18,9 +18,9 @@ const Index = () => {
         <Hero />
       </div>
       <div>
-        <BuildWebsiteSection />
-        <About />
+
         <Projects />
+        <About />
         <TechStack />
         <Experience />
       </div>

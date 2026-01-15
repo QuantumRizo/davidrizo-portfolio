@@ -13,6 +13,7 @@ i18n
             en: { ...enJSON },
             es: { ...esJSON },
         },
+        lng: 'es', // Force Spanish default
         fallbackLng: 'es', // Default to Spanish as requested
         interpolation: {
             escapeValue: false,

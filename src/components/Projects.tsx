@@ -19,6 +19,14 @@ const Projects = () => {
       projectUrl: "/projects/central-simi",
     },
     {
+      title: t("projects.items.ortho.title"),
+      imageSrc: "/marco1.png",
+      secondaryImageSrc: "/marco2.png",
+      description: t("projects.items.ortho.description"),
+      technologies: ["React", "Vite", "Supabase", "TailwindCSS", "Admin Panel"],
+      projectUrl: "#",
+    },
+    {
       title: t("projects.items.dental.title"),
       imageSrc: "/dentistProject1.png",
       secondaryImageSrc: "/dentistProject2.png",
@@ -46,7 +54,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="py-10 px-4 relative bg-black text-white">
+    <section id="projects" className="py-10 px-4 relative bg-black text-white">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Encabezado de la Sección */}
         <motion.div
@@ -69,23 +77,7 @@ const Projects = () => {
         </div>
 
         {/* Botón "Ver Más" al final */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-center mt-24"
-        >
-          <Link to="/projects">
-            <Button
-              variant="outline"
-              className="group text-lg px-8 py-4 rounded-full border-neutral-700 text-white hover:bg-neutral-900 transition-all"
-            >
-              {t("projects.cta")}
-              <ArrowRight className="ml-2 size-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-        </motion.div>
+
       </div>
     </section>
   );

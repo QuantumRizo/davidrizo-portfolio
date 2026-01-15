@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t("nav.home"), path: "/" },
-    { name: t("nav.projects"), path: "/projects" },
+    { name: t("nav.projects"), path: "/#projects" },
     { name: t("nav.contact"), path: "/contact" },
   ];
 
@@ -32,8 +32,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled
-          ? "py-4 bg-background/70 backdrop-blur-md border-b border-white/5 shadow-lg"
-          : "py-6 bg-transparent border-transparent"
+        ? "py-4 bg-background/70 backdrop-blur-md border-b border-white/5 shadow-lg"
+        : "py-6 bg-transparent border-transparent"
         }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -55,8 +55,8 @@ const Navbar = () => {
             >
               <span
                 className={`text-base font-medium transition-colors duration-300 ${location.pathname === link.path
-                    ? "text-primary"
-                    : "text-foreground/70 hover:text-primary"
+                  ? "text-primary"
+                  : "text-foreground/70 hover:text-primary"
                   }`}
               >
                 {link.name}
@@ -77,19 +77,24 @@ const Navbar = () => {
           <LanguageSelector />
         </div>
 
-        {/* MOBILE MENU TOGGLE */}
-        <button
-          className="md:hidden text-white z-50 relative focus:outline-none"
-          onClick={toggleMenu}
-        >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* MOBILE MENU TOGGLE & LANGUAGE */}
+        <div className="md:hidden flex items-center gap-4 z-50 relative">
+          <div className="scale-90">
+            <LanguageSelector />
+          </div>
+          <button
+            className="text-white focus:outline-none"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
 
         {/* MOBILE MENU OVERLAY */}
         <div
           className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 transition-all duration-300 ${isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
             }`}
         >
           {navLinks.map((link) => (
@@ -104,9 +109,7 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <div className="scale-125 mt-4">
-            <LanguageSelector />
-          </div>
+
         </div>
       </div>
     </nav>

@@ -70,11 +70,15 @@
                     "description": "Plataforma de gestión legal full-stack construida con React (Vite) y Supabase. Implementa modelado de datos PostgreSQL, autenticación segura y flujos de trabajo automatizados para cargar, validar y gestionar registros de proveedores."
                 },
                 "dental": {
-                    "title": "Paris Rizo Dental",
+                    "title": "Paris Rizo: Gestión Clínica",
                     "description": "Plataforma de citas dentales con backend personalizado en Supabase e integración con Google Calendar. Maneja agenda segura de pacientes, sincronización automática de eventos y una UI simplificada para mejorar la confiabilidad de reservas."
                 },
+                "ortho": {
+                    "title": "Dr. Marco Alvarado",
+                    "description": "Plataforma integral de gestión clínica para múltiples hospitales. Centraliza la administración de pacientes con historiales médicos detallados, sistema de citas avanzado y panel administrativo robusto, optimizando el flujo de trabajo operativo y la atención médica."
+                },
                 "natalia": {
-                    "title": "Portafolio Industrial Natalia Muñoz",
+                    "title": "Natalia Muñoz: Diseño Industrial",
                     "description": "Portafolio de diseño industrial de alta fidelidad con identidad visual fuerte, animación hero dinámica y UI responsiva. Construido con herramientas modernas para entregar transiciones suaves y una experiencia de usuario premium."
                 },
                 "galaxy": {
