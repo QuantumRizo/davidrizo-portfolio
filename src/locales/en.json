@@ -70,11 +70,15 @@
                     "description": "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records."
                 },
                 "dental": {
-                    "title": "Paris Rizo Dental",
+                    "title": "Paris Rizo: Clinical Management",
                     "description": "Dental appointment platform featuring a custom backend powered by Supabase and Google Calendar API integration. Handles secure patient scheduling, automated syncing of events, data validation workflows, and a streamlined UI that enhances booking reliability and real-time availability management."
                 },
+                "ortho": {
+                    "title": "Dr. Marco Alvarado",
+                    "description": "Comprehensive clinical management platform for multiple hospitals. Centralizes patient administration with detailed medical histories, an advanced scheduling system, and a robust administrative panel, optimizing operational workflows and patient care."
+                },
                 "natalia": {
-                    "title": "Natalia Muñoz Industrial Portfolio",
+                    "title": "Natalia Muñoz: Industrial Design",
                     "description": "High-fidelity industrial design portfolio with a strong visual identity, dynamic hero animation, and responsive UI. Built with modern front-end tooling to deliver smooth transitions, an immersive presentation layer, and optimized asset handling for a premium designer showcase experience."
                 },
                 "galaxy": {

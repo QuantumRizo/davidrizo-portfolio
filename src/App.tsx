@@ -15,7 +15,6 @@ import BrainTumorDetection from "@/pages/BrainTumorDetection";
 import CentralSimi from "@/pages/CentralSimi";
 import SummerCamp from "@/pages/SummerCamp";
 import CampaignDashboard from "@/pages/CampaignDashboard";
-import ProjectsPage from "@/pages/ProjectsPage";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
@@ -32,7 +31,7 @@ const App = () => (
           {/* ✅ Todas las páginas pasan por MainLayout */}
           <Route element={<MainLayout />}>
             <Route path="/" element={<Index />} />
-            <Route path="/projects" element={<ProjectsPage />} />
+
             <Route path="/projects/galaxy-classification" element={<GalaxyClassification />} />
             <Route path="/projects/telco-churn" element={<TelcoChurn />} />
             <Route path="/projects/brain-tumor-detection" element={<BrainTumorDetection />} />
