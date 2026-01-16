@@ -93,7 +93,6 @@ const ScrambledTitle: React.FC = () => {
   const phrasesRef = useRef([
     t("hero.title_1"),
     t("hero.title_2"),
-    t("hero.title_3"),
   ]);
 
   // Update phrases when language changes
@@ -101,7 +100,6 @@ const ScrambledTitle: React.FC = () => {
     phrasesRef.current = [
       t("hero.title_1"),
       t("hero.title_2"),
-      t("hero.title_3"),
     ];
   }, [t, i18n.language]);
 
@@ -129,7 +127,7 @@ const ScrambledTitle: React.FC = () => {
   return (
     <h1
       ref={elementRef}
-      className="text-white text-4xl md:text-6xl font-bold tracking-wider text-center z-30"
+      className="text-white text-4xl md:text-6xl font-bold tracking-wider text-center z-30 min-h-[1.5em] flex items-center justify-center p-2 leading-tight"
       style={{ fontFamily: "monospace" }}
     >
       LOADING_
