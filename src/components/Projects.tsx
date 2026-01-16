@@ -24,7 +24,7 @@ const Projects = () => {
       secondaryImageSrc: "/marco2.png",
       description: t("projects.items.ortho.description"),
       technologies: ["React", "Vite", "Supabase", "TailwindCSS", "Admin Panel"],
-      projectUrl: "#",
+      projectUrl: "https://drmarcoalvarado.com",
     },
     {
       title: t("projects.items.dental.title"),
