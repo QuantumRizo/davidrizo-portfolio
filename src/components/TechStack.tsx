@@ -1,6 +1,6 @@
 // Mantenemos React para el componente
 import React from "react";
-import { useTranslation } from "react-i18next";
+
 
 const technologies = [
   {
@@ -86,12 +86,23 @@ const technologies = [
 ];
 
 const TechStack = () => {
-  const { t } = useTranslation(); // HOOK
 
   return (
-    <section className="py-20 bg-black overflow-hidden relative">
-      <h2 className="text-center text-white text-3xl font-bold mb-12 tracking-wider">
-        {t("stack.title").toUpperCase()}
+    <section className="py-24 bg-[#0055FF] relative overflow-hidden border-y-8 border-blue-900">
+
+      {/* CSS Grid Pattern (Blueprint) */}
+      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}>
+      </div>
+
+      {/* Dashed Border Overlay */}
+      <div className="absolute inset-4 border-2 border-dashed border-white/30 rounded-3xl pointer-events-none z-0" />
+
+      <h2 className="relative z-10 text-center text-white text-3xl font-bold mb-16 tracking-wider font-mono">
+        TECH STACK
       </h2>
 
       <style>{`
@@ -108,12 +119,8 @@ const TechStack = () => {
         }
       `}</style>
 
-      {/* Degradados laterales */}
-      <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-      <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-
       {/* Carrusel */}
-      <div className="tech-container flex items-center">
+      <div className="tech-container flex items-center relative z-10">
         <div className="flex animate-scroll">
           {/* Renderizado triple para loop infinito suave */}
           {[...technologies, ...technologies, ...technologies].map((tech, index) => (
@@ -122,16 +129,15 @@ const TechStack = () => {
               className="flex flex-col items-center gap-2 px-8 min-w-[140px] group transition-all duration-300 hover:scale-110 cursor-default"
             >
               <div
-                className="transition-all duration-300 drop-shadow-lg group-hover:scale-110"
-                style={{ filter: `drop-shadow(0 0 5px ${tech.color}80)` }}
+                className="transition-all duration-300 drop-shadow-lg group-hover:scale-110 bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20"
               >
                 <img
                   src={tech.iconUrl}
                   alt={tech.name}
-                  className="w-10 h-10 object-contain" // Use w-10 h-10 for slightly better visibility with images
+                  className="w-10 h-10 object-contain"
                 />
               </div>
-              <span className="text-gray-500 font-mono text-sm group-hover:text-white transition-colors">
+              <span className="text-blue-100 font-mono text-sm font-bold group-hover:text-white transition-colors">
                 {tech.name}
               </span>
             </div>

@@ -1,267 +1,192 @@
 // src/components/Hero.tsx
-import React, { useState, useEffect, useRef } from "react"
-import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, MessageCircle, ArrowRight, Calendar, Globe, Monitor, Smartphone } from "lucide-react"
-import { Link } from "react-router-dom"
-import { useTranslation } from "react-i18next";
+import React, { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react"
+import SectionConnector from "./SectionConnector";
 
-// --- CLASE PARA EL TEXTO ENCRIPTADO (SCRAMBLE) ---
-class TextScramble {
-  el: HTMLElement
-  chars: string
-  queue: Array<{
-    from: string
-    to: string
-    start: number
-    end: number
-    char?: string
-  }>
-  frame: number
-  frameRequest: number
-  resolve: (value: void | PromiseLike<void>) => void
-
-  constructor(el: HTMLElement) {
-    this.el = el
-    this.chars = '!<>-_\\/[]{}ñ—=+*^?#'
-    this.queue = []
-    this.frame = 0
-    this.frameRequest = 0
-    this.resolve = () => { }
-    this.update = this.update.bind(this)
-  }
-
-  setText(newText: string) {
-    const oldText = this.el.innerText
-    const length = Math.max(oldText.length, newText.length)
-    const promise = new Promise<void>((resolve) => (this.resolve = resolve))
-    this.queue = []
-
-    for (let i = 0; i < length; i++) {
-      const from = oldText[i] || ''
-      const to = newText[i] || ''
-      const start = Math.floor(Math.random() * 40)
-      const end = start + Math.floor(Math.random() * 40)
-      this.queue.push({ from, to, start, end })
-    }
-
-    cancelAnimationFrame(this.frameRequest)
-    this.frame = 0
-    this.update()
-    return promise
-  }
-
-  update() {
-    let output = ''
-    let complete = 0
-
-    for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char } = this.queue[i]
-      if (this.frame >= end) {
-        complete++
-        output += to
-      } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
-          char = this.chars[Math.floor(Math.random() * this.chars.length)]
-          this.queue[i].char = char
-        }
-        output += `<span class="dud">${char}</span>`
-      } else {
-        output += from
-      }
-    }
-
-    this.el.innerHTML = output
-    if (complete === this.queue.length) {
-      this.resolve()
-    } else {
-      this.frameRequest = requestAnimationFrame(this.update)
-      this.frame++
-    }
-  }
-}
-
-
-// --- COMPONENTE DEL TÍTULO ---
-const ScrambledTitle: React.FC = () => {
-  const { t, i18n } = useTranslation(); // HOOK
-  const elementRef = useRef<HTMLHeadingElement>(null)
-  const scramblerRef = useRef<TextScramble | null>(null)
-  const [mounted, setMounted] = useState(false)
-
-  // Use a ref to store phrases so the animation loop always accesses the latest translation
-  // without needing to restart the effect/loop.
-  const phrasesRef = useRef([
-    t("hero.title_1"),
-    t("hero.title_2"),
-  ]);
-
-  // Update phrases when language changes
-  useEffect(() => {
-    phrasesRef.current = [
-      t("hero.title_1"),
-      t("hero.title_2"),
-    ];
-  }, [t, i18n.language]);
-
-  useEffect(() => {
-    if (elementRef.current && !scramblerRef.current) {
-      scramblerRef.current = new TextScramble(elementRef.current)
-      setMounted(true)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (mounted && scramblerRef.current) {
-      let counter = 0
-      const next = () => {
-        const phrases = phrasesRef.current; // Read from ref
-        scramblerRef.current!.setText(phrases[counter]).then(() => {
-          setTimeout(next, 2500)
-        })
-        counter = (counter + 1) % phrases.length
-      }
-      next()
-    }
-  }, [mounted])
-
-  return (
-    <h1
-      ref={elementRef}
-      className="text-white text-4xl md:text-6xl font-bold tracking-wider text-center z-30 min-h-[1.5em] flex items-center justify-center p-2 leading-tight"
-      style={{ fontFamily: "monospace" }}
-    >
-      LOADING_
-    </h1>
-  )
-}
-
-
-// --- HERO PRINCIPAL --- 
 const Hero: React.FC = () => {
-  const { t } = useTranslation();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Parallax effect for stickers
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, -80]); // Coffee
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, -40]); // Book
+  const y5 = useTransform(scrollYProgress, [0, 1], [0, -120]); // Apple
 
   const links = [
-    {
-      icon: <Github className="size-5 text-primary" />,
-      label: t("hero.github"),
-      href: "https://github.com/QuantumRizo",
-    },
-    {
-      icon: <Mail className="size-5 text-primary" />,
-      label: t("hero.email"),
-      href: "mailto:davidrizo.phys@gmail.com",
-    },
-    {
-      icon: <MessageCircle className="size-5 text-primary" />,
-      label: t("hero.whatsapp"),
-      href: "https://wa.me/525624290009",
-    },
-    {
-      icon: <Linkedin className="size-5 text-primary" />,
-      label: t("hero.linkedin"),
-      href: "https://www.linkedin.com/in/felix-rizo-dev/",
-    },
+    { icon: <Github className="size-5" />, label: "GitHub", href: "https://github.com/QuantumRizo" },
+    { icon: <Mail className="size-5" />, label: "Email", href: "mailto:davidrizo.phys@gmail.com" },
+    { icon: <MessageCircle className="size-5" />, label: "WhatsApp", href: "https://wa.me/525624290009" },
+    { icon: <Linkedin className="size-5" />, label: "LinkedIn", href: "https://www.linkedin.com/in/felix-rizo-dev/" },
   ]
 
   return (
-    // CAMBIO: min-h-screen -> min-h-[70vh] para ocupar ~70% de la pantalla
-    <div className="relative w-full min-h-[70vh] flex flex-col items-center overflow-x-hidden justify-start pt-20 md:pt-20">
-      <style>{`.dud { color: rgba(94, 255, 0, 1); opacity: 0.7; }`}</style>
+    <div ref={containerRef} className="relative w-full bg-[#fdfdfd] pb-20 overflow-hidden">
 
-      {/* Imagen de fondo */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/heroFondo.jpg"
-          alt="Background Hero"
-          className="w-full h-full object-cover object-center md:object-bottom"
-        />
-        <div className="absolute inset-0 bg-black/60" />
+      {/* --- BACKGROUND: NOTEBOOK STYLE --- */}
+      {/* Notebook Graph Pattern */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`,
+          backgroundSize: '30px 30px'
+        }}>
       </div>
-
-      {/* Contenido */}
-      <div className="relative z-10 p-4 flex flex-col items-center gap-8">
-        <ScrambledTitle />
-
-        {/* --- BOTONES DE CONTACTO --- */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-4 mt-4"
-        >
-          {links.map((link, i) => (
-            <motion.a
-              key={i}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="
-                flex items-center gap-2 
-                bg-card/40 backdrop-blur 
-                border border-border 
-                rounded-xl px-4 py-2 
-                hover:bg-accent/30 
-                transition-colors
-              "
-            >
-              {link.icon}
-              <span className="text-white font-medium">{link.label}</span>
-            </motion.a>
-          ))}
-        </motion.div>
-      </div>
+      {/* Paper Texture Overlay */}
+      <div className="absolute inset-0 z-0 opacity-[0.4] pointer-events-none mix-blend-multiply filter contrast-125 brightness-100"
+        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")` }}
+      />
 
       {/* 
-       * SECCIÓN AGREGADA: Antes en BuildWebsiteSection.tsx
-       * Contenido movido al Hero para unificar.
-       */}
-      <div className="relative z-10 flex flex-col items-center gap-8 mt-12 pb-24 px-4 w-full max-w-5xl text-center">
+        BLUEPRINT CONTAINER 
+        - Fit to screen height (90dvh)
+        - Flexbox centering
+      */}
+      <div className="relative w-full h-[80dvh] bg-[#0055FF] rounded-b-[3rem] md:rounded-b-[5rem] overflow-hidden flex flex-col items-center justify-center shadow-2xl z-10 border-b-8 border-blue-900">
 
-        <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
-          {t("build_website.title")}
-        </h2>
-
-        <p className="text-lg md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
-          {t("build_website.description")}
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-6 mt-4">
-          <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-gray-300">
-            <Monitor className="size-5 text-primary" /> <span className="font-medium">{t("build_website.modern_design")}</span>
-          </div>
-          <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-gray-300">
-            <Smartphone className="size-5 text-primary" /> <span className="font-medium">{t("build_website.fully_responsive")}</span>
-          </div>
-          <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-gray-300">
-            <Globe className="size-5 text-primary" /> <span className="font-medium">{t("build_website.seo_optimized")}</span>
-          </div>
-          <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-gray-300">
-            <MessageCircle className="size-5 text-primary" /> <span className="font-medium">{t("build_website.floating_whatsapp")}</span>
-          </div>
-          <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-gray-300">
-            <Calendar className="size-5 text-primary" /> <span className="font-medium">{t("build_website.booking_system")}</span>
-          </div>
+        {/* CSS Grid Pattern */}
+        <div className="absolute inset-0 z-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }}>
         </div>
 
-        <Link
-          to="/contact"
-          className="
-             mt-10 group relative inline-flex items-center gap-3 
-             px-8 py-4 bg-primary text-black font-bold rounded-full 
-             hover:bg-primary/90 transition-all transform hover:scale-105
-             shadow-[0_0_20px_rgba(var(--primary-rgb),0.5)]
-             "
-        >
-          {t("build_website.cta")}
-          <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
-        </Link>
+        {/* Dashed Border Overlay */}
+        <div className="absolute inset-4 md:inset-8 border-2 border-dashed border-white/30 rounded-b-[2.5rem] md:rounded-b-[4.5rem] pointer-events-none z-0" />
+
+        {/* MAIN CONTENT */}
+        <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl">
+
+          {/* Badge / Sticker */}
+          <motion.div
+            initial={{ scale: 0, rotate: -15 }}
+            animate={{ scale: 1, rotate: -5 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
+            className="mb-6 bg-yellow-400 text-black font-black text-xs md:text-sm px-4 py-1.5 rounded-sm -rotate-3 shadow-lg border-2 border-black"
+          >
+            FULL STACK DEVS
+          </motion.div>
+
+          {/* Big Typography - Scaled with viewport width/height to fit */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-[0.9] drop-shadow-xl">
+            <motion.span
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.1 }}
+              className="block"
+            >
+              WELCOME
+            </motion.span>
+            <motion.span
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white"
+            >
+              TO MY
+            </motion.span>
+            <motion.span
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="block"
+            >
+              SPACE
+            </motion.span>
+          </h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="mt-6 text-lg md:text-xl text-blue-100 max-w-xl font-medium"
+          >
+            Building digital experiences that connect & inspire.
+          </motion.p>
+
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap justify-center gap-3 mt-8"
+          >
+            {links.map((link, i) => (
+              <a
+                key={i}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  flex items-center gap-2 
+                  bg-white text-black 
+                  border-2 border-black
+                  rounded-full px-5 py-2.5
+                  font-bold text-sm md:text-base
+                  shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]
+                  hover:translate-x-[2px] hover:translate-y-[2px]
+                  hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]
+                  transition-all
+                "
+              >
+                {link.icon}
+                <span>{link.label}</span>
+              </a>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Floating Stickers */}
+        {/* Existing: Lightning (Left Top) */}
+        <motion.div style={{ y: y1 }} className="absolute top-20 left-5 md:left-20 text-5xl md:text-7xl animate-float opacity-80 pointer-events-none">
+          ⚡
+        </motion.div>
+        {/* Existing: Rocket (Right Bottom) */}
+        <motion.div style={{ y: y2 }} className="absolute bottom-1/4 right-5 md:right-20 text-5xl md:text-7xl animate-pulse opacity-80 pointer-events-none">
+          🚀
+        </motion.div>
+
+        {/* NEW: Coffee Mug (Top Right) */}
+        <motion.div style={{ y: y3 }} className="absolute top-20 right-8 md:right-32 text-4xl md:text-6xl animate-float opacity-90 pointer-events-none rotate-12">
+          ☕
+        </motion.div>
+
+        {/* NEW: Book (Middle Left) */}
+        <motion.div style={{ y: y4 }} className="absolute top-1/3 left-10 md:left-56 text-4xl md:text-6xl animate-float opacity-90 pointer-events-none -rotate-12">
+          📚
+        </motion.div>
+
+        {/* NEW: Apple (Middle/Lower Right) */}
+        <motion.div style={{ y: y5 }} className="absolute top-1/3 right-4 md:right-56 text-4xl md:text-5xl animate-float opacity-90 pointer-events-none rotate-6">
+          🍎
+        </motion.div>
 
       </div>
+
+      {/* CONNECTOR: Pencil (Left) */}
+      <SectionConnector
+        imageSrc="/Pencil.png"
+        altText="Pencil"
+        className="absolute bottom-10 left-[-20px] md:left-10 w-[180px] md:w-[350px] rotate-12 z-20 drop-shadow-2xl"
+      />
+
+      {/* CONNECTOR: Computer (Right) */}
+      <SectionConnector
+        imageSrc="/Computer.png"
+        altText="Computer"
+        className="absolute bottom-5 right-[-30px] md:right-10 w-[200px] md:w-[400px] rotate-[-5deg] z-20 drop-shadow-lg"
+      />
 
     </div>
   )
 }
 
 export default Hero
+
