@@ -63,6 +63,10 @@ export default {
           dark: "#003380",    // Darker shade if needed
         },
       },
+      fontFamily: {
+        chalk: ['"Fredericka the Great"', "cursive"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
