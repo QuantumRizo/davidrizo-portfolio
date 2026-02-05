@@ -22,7 +22,7 @@ export default function About() {
 
           {/* TEXT */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-mono tracking-tighter">
+            <h2 className="text-6xl md:text-7xl font-bold mb-6 font-chalk tracking-widest text-white drop-shadow-md">
               About Me
             </h2>
 
