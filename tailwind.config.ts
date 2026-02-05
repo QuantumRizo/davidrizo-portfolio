@@ -57,6 +57,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        blueprint: {
+          DEFAULT: "#0047AB", // Cobalt/Royal Blue for the main background
+          light: "#3366cc",   // Lighter shade for grid/highlights
+          dark: "#003380",    // Darker shade if needed
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

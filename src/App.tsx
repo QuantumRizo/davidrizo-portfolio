@@ -15,7 +15,6 @@ import BrainTumorDetection from "@/pages/BrainTumorDetection";
 import CentralSimi from "@/pages/CentralSimi";
 import SummerCamp from "@/pages/SummerCamp";
 import CampaignDashboard from "@/pages/CampaignDashboard";
-import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,7 +37,6 @@ const App = () => (
             <Route path="/projects/central-simi" element={<CentralSimi />} />
             <Route path="/projects/campaign-dashboard" element={<CampaignDashboard />} />
             <Route path="/projects/summer-camp" element={<SummerCamp />} />
-            <Route path="/contact" element={<Contact />} />
           </Route>
 
           {/* Página 404 fuera del layout */}

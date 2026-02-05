@@ -1,84 +1,106 @@
-// pages/Home/Projects.jsx (o donde lo tengas)
+// pages/Home/Projects.jsx
 import { motion } from "framer-motion";
-import ProjectCaseStudy from "@/components/ProjectCaseStudy.tsx"; // Asegúrate de importar el nuevo componente
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import ProjectCaseStudy from "@/components/ProjectCaseStudy.tsx";
+import SectionConnector from "@/components/SectionConnector";
 
 const Projects = () => {
-  const { t } = useTranslation();
   // Datos de los 3 proyectos seleccionados
   const featuredProjects = [
     {
-      title: t("projects.items.central_simi.title"),
-      imageSrc: "/simiProject1.png",
+      title: "Central Simi Portal",
+      imageSrc: "/simiPC.png",
+      mobileImageSrc: "/simiphone.png",
       secondaryImageSrc: "/simiProject2.png",
-      description: t("projects.items.central_simi.description"),
+      description: "Full-stack legal management platform built with React (Vite) and Supabase. Implements PostgreSQL data modeling, secure authentication, and automated document workflows for uploading, validating, and managing provider records.",
       technologies: ["React", "Vite", "Supabase", "PostgreSQL", "TailwindCSS"],
       projectUrl: "/projects/central-simi",
     },
     {
-      title: t("projects.items.ortho.title"),
-      imageSrc: "/marco1.png",
+      title: "Dr. Marco Alvarado",
+      imageSrc: "/marcoPC.png",
       secondaryImageSrc: "/marco2.png",
-      description: t("projects.items.ortho.description"),
+      description: "Comprehensive clinical management platform for multiple hospitals. Centralizes patient administration with detailed medical histories, an advanced scheduling system, and a robust administrative panel, optimizing operational workflows and patient care.",
       technologies: ["React", "Vite", "Supabase", "TailwindCSS", "Admin Panel"],
       projectUrl: "https://drmarcoalvarado.com",
     },
     {
-      title: t("projects.items.dental.title"),
-      imageSrc: "/dentistProject1.png",
+      title: "Paris Rizo: Clinical Management",
+      imageSrc: "/parisPC.png",
       secondaryImageSrc: "/dentistProject2.png",
-      description: t("projects.items.dental.description"),
+      description: "Dental appointment platform featuring a custom backend powered by Supabase and Google Calendar API integration. Handles secure patient scheduling, automated syncing of events, data validation workflows, and a streamlined UI that enhances booking reliability and real-time availability management.",
       technologies: ["React", "Vite", "Supabase", "Google Calendar API", "TailwindCSS"],
       projectUrl: "https://paris-rizo-dental.vercel.app/",
     },
     {
-      title: t("projects.items.natalia.title"),
-      imageSrc: "/nataliaPortfolio1.png",
+      title: "Natalia Muñoz: Industrial Design",
+      imageSrc: "/nataliaPC.png",
       secondaryImageSrc: "/nataliaPortfolio2.png",
-      description: t("projects.items.natalia.description"),
+      description: "High-fidelity industrial design portfolio with a strong visual identity, dynamic hero animation, and responsive UI. Built with modern front-end tooling to deliver smooth transitions, an immersive presentation layer, and optimized asset handling for a premium designer showcase experience.",
       technologies: ["React", "Vite", "GSAP", "TailwindCSS", "Responsive Design"],
       projectUrl: "https://nataliamunoz.art",
-    },
-    {
-      title: t("projects.items.galaxy.title"),
-      imageSrc: "/galaxyProject1.jpg",
-      secondaryImageSrc: "/galaxyProject2.jpg",
-      description: t("projects.items.galaxy.description"),
-      technologies: ["Python", "Astropy", "scikit-learn", "Deep Learning"],
-      githubUrl: "https://github.com/QuantiumRizo/agn-starburst-galaxy-classifier",
-      projectUrl: "/projects/galaxy-classification",
     },
   ];
 
   return (
-    <section id="projects" className="py-10 px-4 relative bg-black text-white">
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Encabezado de la Sección */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            {t("projects.title")}
-          </h2>
-        </motion.div>
+    <section id="projects" className="pt-0 pb-40 relative bg-[#276339] text-slate-900 overflow-hidden">
 
-        {/* Lista Vertical de Estudios de Caso */}
-        <div className="flex flex-col">
-          {featuredProjects.map((project, index) => (
-            <ProjectCaseStudy key={project.title} {...project} index={index} />
-          ))}
+      {/* Chalkboard/Blueprint Grid Pattern (Transition Area) */}
+      <div className="absolute inset-0 z-0 opacity-[0.1] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+          backgroundSize: '30px 30px'
+        }}>
+      </div>
+
+      {/* WHITE NOTEBOOK CONTAINER */}
+      <div className="bg-[#fdfdfd] rounded-b-[3rem] md:rounded-b-[5rem] pb-12 px-4 relative z-10 shadow-2xl overflow-hidden">
+
+        {/* Notebook Graph Pattern */}
+        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`,
+            backgroundSize: '30px 30px'
+          }}>
         </div>
 
-        {/* Botón "Ver Más" al final */}
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Encabezado de la Sección */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-black">
+              Featured Projects
+            </h2>
+          </motion.div>
 
+          {/* Lista Vertical de Estudios de Caso */}
+          <div className="flex flex-col gap-0">
+            {featuredProjects.map((project, index) => (
+              <ProjectCaseStudy key={project.title} {...project} index={index} />
+            ))}
+          </div>
+
+        </div>
       </div>
+
+      {/* CONNECTOR: Cursor (Transition to About - Left) */}
+      <SectionConnector
+        imageSrc="/Cursor.png"
+        altText="Cursor"
+        className="absolute bottom-10 left-10 md:left-20 w-[60px] md:w-[100px] -rotate-12 z-20 drop-shadow-xl"
+      />
+
+      {/* CONNECTOR: Pencil (Transition to About - Right) */}
+      <SectionConnector
+        imageSrc="/Pencil.png"
+        altText="Pencil"
+        className="absolute bottom-10 -right-5 md:right-10 w-[120px] md:w-[200px] z-20 drop-shadow-xl scale-x-[-1] rotate-12"
+      />
+
     </section>
   );
 };

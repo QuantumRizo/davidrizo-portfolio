@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import LanguageSelector from "./LanguageSelector";
-import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const { t } = useTranslation();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +19,9 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: t("nav.home"), path: "/" },
-    { name: t("nav.projects"), path: "/#projects" },
-    { name: t("nav.contact"), path: "/contact" },
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/#projects" },
+    { name: "Contact", path: "/#footer" },
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -74,14 +71,10 @@ const Navbar = () => {
               )}
             </Link>
           ))}
-          <LanguageSelector />
         </div>
 
-        {/* MOBILE MENU TOGGLE & LANGUAGE */}
+        {/* MOBILE MENU TOGGLE */}
         <div className="md:hidden flex items-center gap-4 z-50 relative">
-          <div className="scale-90">
-            <LanguageSelector />
-          </div>
           <button
             className="text-white focus:outline-none"
             onClick={toggleMenu}
@@ -108,8 +101,6 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-
-
         </div>
       </div>
     </nav>
