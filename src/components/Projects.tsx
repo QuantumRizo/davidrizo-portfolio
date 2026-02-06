@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import ProjectCaseStudy from "@/components/ProjectCaseStudy.tsx";
 import SectionConnector from "@/components/SectionConnector";
+import NeuralNetworkDiagram from "@/components/NeuralNetworkDiagram";
 
 const Projects = () => {
   // Datos de los 3 proyectos seleccionados
@@ -19,6 +20,7 @@ const Projects = () => {
       title: "Dr. Marco Alvarado",
       imageSrc: "/marcoPC.png",
       secondaryImageSrc: "/marco2.png",
+      mobileImageSrc: "/marcoPhone.png",
       description: "Comprehensive clinical management platform for multiple hospitals. Centralizes patient administration with detailed medical histories, an advanced scheduling system, and a robust administrative panel, optimizing operational workflows and patient care.",
       technologies: ["React", "Vite", "Supabase", "TailwindCSS", "Admin Panel"],
       projectUrl: "https://drmarcoalvarado.com",
@@ -27,6 +29,7 @@ const Projects = () => {
       title: "Paris Rizo: Clinical Management",
       imageSrc: "/parisPC.png",
       secondaryImageSrc: "/dentistProject2.png",
+      mobileImageSrc: "/parisPhone.png",
       description: "Dental appointment platform featuring a custom backend powered by Supabase and Google Calendar API integration. Handles secure patient scheduling, automated syncing of events, data validation workflows, and a streamlined UI that enhances booking reliability and real-time availability management.",
       technologies: ["React", "Vite", "Supabase", "Google Calendar API", "TailwindCSS"],
       projectUrl: "https://paris-rizo-dental.vercel.app/",
@@ -35,9 +38,18 @@ const Projects = () => {
       title: "Natalia Muñoz: Industrial Design",
       imageSrc: "/nataliaPC.png",
       secondaryImageSrc: "/nataliaPortfolio2.png",
+      mobileImageSrc: "/nataliaPhone.png",
       description: "High-fidelity industrial design portfolio with a strong visual identity, dynamic hero animation, and responsive UI. Built with modern front-end tooling to deliver smooth transitions, an immersive presentation layer, and optimized asset handling for a premium designer showcase experience.",
       technologies: ["React", "Vite", "GSAP", "TailwindCSS", "Responsive Design"],
       projectUrl: "https://nataliamunoz.art",
+    },
+    {
+      title: "Galaxy Classification: ML",
+      imageSrc: "/galaxy.jpg",
+      CustomVisualElement: <NeuralNetworkDiagram />,
+      description: "Machine Learning project focused on the automatic classification of galaxies (AGN vs Starburst) using spectroscopic data from SDSS. Implements 1D Convolutional Neural Networks (CNNs) to analyze spectral flux arrays, achieving high accuracy in astrophysical categorization.",
+      technologies: ["Python", "TensorFlow", "Astropy", "Scikit-learn", "CNN"],
+      projectUrl: "https://github.com/QuantumRizo/agn-starburst-galaxy-classifier",
     },
   ];
 

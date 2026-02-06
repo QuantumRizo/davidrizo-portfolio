@@ -80,6 +80,10 @@
                     "title": "Natalia Muñoz: Industrial Design",
                     "description": "High-fidelity industrial design portfolio with a strong visual identity, dynamic hero animation, and responsive UI. Built with modern front-end tooling to deliver smooth transitions, an immersive presentation layer, and optimized asset handling for a premium designer showcase experience."
                 },
+                "galaxy_ml": {
+                    "title": "Galaxy Classification: ML",
+                    "description": "Machine Learning project focused on the automatic classification of galaxies (AGN vs Starburst) using spectroscopic data from SDSS. Implements 1D Convolutional Neural Networks (CNNs) to analyze spectral flux arrays."
+                },
                 "galaxy": {
                     "title": "Galaxy Classification",
                     "description": "Deep learning system that classifies galaxies as Active Galactic Nuclei (AGN) or Starburst using FITS spectroscopic data from SDSS. Combines Python, Astropy, and scikit-learn to extract spectral features and achieve high-precision astrophysical classification."

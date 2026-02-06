@@ -10,6 +10,7 @@ interface ProjectCaseStudyProps {
   imageSrc: string;
   secondaryImageSrc?: string;
   mobileImageSrc?: string; // Nuevo prop opcional
+  CustomVisualElement?: React.ReactNode; // Nuevo prop para visuales personalizados (SVG, canvas, etc.)
   technologies: string[];
   projectUrl?: string;
   githubUrl?: string;
@@ -21,6 +22,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
   description,
   imageSrc,
   mobileImageSrc,
+  CustomVisualElement,
   technologies,
   projectUrl,
   githubUrl,
@@ -51,8 +53,12 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
           />
         </div>
 
-        {/* OVERLAPPING MOBILE IMAGE */}
-        {mobileImageSrc && (
+        {/* CUSTOM ELEMENT (Higher Priority) OR MOBILE IMAGE */}
+        {CustomVisualElement ? (
+          <div className="absolute -bottom-16 -right-6 md:-bottom-20 md:-right-24 w-[180px] md:w-[300px] z-20 transition-transform duration-500 hover:scale-110 hover:-rotate-3">
+            {CustomVisualElement}
+          </div>
+        ) : mobileImageSrc ? (
           <div className="absolute -bottom-5 -right-5 md:-bottom-10 md:-right-12 w-[100px] md:w-[160px] z-20 transition-transform duration-500 hover:scale-110 hover:-rotate-3">
             <img
               src={mobileImageSrc}
@@ -60,7 +66,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
               className="w-full h-auto drop-shadow-2xl"
             />
           </div>
-        )}
+        ) : null}
       </div>
 
       {/* --- INFO --- */}
