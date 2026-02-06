@@ -47,10 +47,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="footer" className="bg-slate-950 text-slate-300 py-20 relative overflow-hidden">
-      
+    <footer id="footer" className="bg-black text-slate-300 py-20 relative overflow-hidden">
+
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 relative z-10">
-        
+
         {/* BRAND COLUMN */}
         <div className="md:col-span-5 space-y-6">
           <Link to="/" className="text-3xl font-bold text-white tracking-tighter font-mono">
@@ -67,8 +67,8 @@ const Footer = () => {
           <ul className="space-y-3">
             {quickLinks.map((link) => (
               <li key={link.name}>
-                <a 
-                  href={link.href} 
+                <a
+                  href={link.href}
                   className="hover:text-primary transition-colors flex items-center group w-fit"
                 >
                   <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
@@ -86,9 +86,9 @@ const Footer = () => {
               const Icon = link.icon;
               return (
                 <li key={link.label}>
-                  <a 
-                    href={link.href} 
-                    target="_blank" 
+                  <a
+                    href={link.href}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-white transition-colors group"
                   >

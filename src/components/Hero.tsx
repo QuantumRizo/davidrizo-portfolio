@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
             transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
             className="mb-6 bg-yellow-400 text-black font-black text-xs md:text-sm px-4 py-1.5 rounded-sm -rotate-3 shadow-lg border-2 border-black"
           >
-            FULL STACK DEVS
+            FULL STACK DEV | PHYSICIST
           </motion.div>
 
           {/* Big Typography - Scaled with viewport width/height to fit */}
@@ -144,28 +144,44 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Floating Stickers */}
-        {/* Existing: Lightning (Left Top) */}
-        <motion.div style={{ y: y1 }} className="absolute top-20 left-5 md:left-20 text-5xl md:text-7xl animate-float opacity-80 pointer-events-none">
-          ⚡
-        </motion.div>
-        {/* Existing: Rocket (Right Bottom) */}
-        <motion.div style={{ y: y2 }} className="absolute bottom-1/4 right-5 md:right-20 text-5xl md:text-7xl animate-pulse opacity-80 pointer-events-none">
-          🚀
+        {/* NEW: Einstein-Rosen Bridge / Field Eq (Top Right) */}
+        <motion.div style={{ y: y3 }} className="absolute top-16 right-4 md:right-16 text-2xl md:text-3xl opacity-90 pointer-events-none rotate-[15deg] font-chalk text-white/90">
+          G_μν = 8πT_μν
         </motion.div>
 
-        {/* NEW: Coffee Mug (Top Right) */}
-        <motion.div style={{ y: y3 }} className="absolute top-20 right-8 md:right-32 text-4xl md:text-6xl animate-float opacity-90 pointer-events-none rotate-12">
-          ☕
+        {/* NEW: Schrödinger Equation (Middle Left) */}
+        <motion.div style={{ y: y4 }} className="absolute top-[35%] left-2 md:left-16 text-2xl md:text-4xl opacity-90 pointer-events-none -rotate-12 font-chalk text-white/90">
+          iℏ ∂Ψ/∂t = ĤΨ
         </motion.div>
 
-        {/* NEW: Book (Middle Left) */}
-        <motion.div style={{ y: y4 }} className="absolute top-1/3 left-10 md:left-56 text-4xl md:text-6xl animate-float opacity-90 pointer-events-none -rotate-12">
-          📚
+        {/* NEW: Mass-Energy (Middle/Lower Right) */}
+        <motion.div style={{ y: y5 }} className="absolute top-[35%] right-4 md:right-20 text-2xl md:text-5xl opacity-90 pointer-events-none rotate-[20deg] font-chalk text-white/90">
+          E = mc²
         </motion.div>
 
-        {/* NEW: Apple (Middle/Lower Right) */}
-        <motion.div style={{ y: y5 }} className="absolute top-1/3 right-4 md:right-56 text-4xl md:text-5xl animate-float opacity-90 pointer-events-none rotate-6">
-          🍎
+        {/* NEW: Euler's Identity (Bottom Left) */}
+        <motion.div style={{ y: y1 }} className="absolute bottom-40 left-6 md:left-24 text-2xl md:text-4xl opacity-80 pointer-events-none -rotate-[15deg] font-chalk text-white/80">
+          e^iπ + 1 = 0
+        </motion.div>
+
+        {/* NEW: Calculus/Integral (Top Left) */}
+        <motion.div style={{ y: y2 }} className="absolute top-20 left-[15%] md:left-[20%] text-2xl md:text-4xl opacity-80 pointer-events-none rotate-[10deg] font-chalk text-white/80">
+          ∫ e^x dx
+        </motion.div>
+
+        {/* NEW: Heisenberg Uncertainty (Bottom Right) */}
+        <motion.div style={{ y: y3 }} className="absolute bottom-24 right-4 md:right-28 text-2xl md:text-4xl opacity-80 pointer-events-none -rotate-[10deg] font-chalk text-white/80">
+          ΔxΔp ≥ ℏ/2
+        </motion.div>
+
+        {/* NEW: Maxwell's Equations (Top Center-Right) */}
+        <motion.div style={{ y: y4 }} className="absolute top-8 right-[25%] md:right-[30%] text-xl md:text-3xl opacity-70 pointer-events-none -rotate-[5deg] font-chalk text-white/70">
+          ∇ ⋅ B = 0
+        </motion.div>
+
+        {/* NEW: Hubble's Law (Lower Left) */}
+        <motion.div style={{ y: y5 }} className="absolute bottom-16 left-8 md:left-48 text-2xl md:text-3xl opacity-70 pointer-events-none rotate-[25deg] font-chalk text-white/70">
+          v = H₀D
         </motion.div>
 
       </div>
