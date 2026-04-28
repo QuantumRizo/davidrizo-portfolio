@@ -41,7 +41,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
     <motion.div
       ref={containerRef}
       style={{ scale, opacity }}
-      className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center py-10 border-b border-black/10 last:border-0`}
+      className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 lg:gap-24 items-center py-10 border-b border-black/10 last:border-0`}
     >
       {/* --- SCREENSHOT COMPONENT --- */}
       <div className="w-full lg:w-1/2 relative group perspective-1000 flex justify-center items-center">

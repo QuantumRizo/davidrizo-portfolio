@@ -5,8 +5,15 @@ import SectionConnector from "@/components/SectionConnector";
 import NeuralNetworkDiagram from "@/components/NeuralNetworkDiagram";
 
 const Projects = () => {
-  // Datos de los 3 proyectos seleccionados
   const featuredProjects = [
+    {
+      title: "MUYMUY Beauty Studio",
+      imageSrc: "/muymuyPC.png",
+      mobileImageSrc: "/muymuyPhone.png",
+      description: "Complete digital ecosystem for MUYMUY Beauty Studio. A modern monorepo featuring a React-based administrative platform for branch management and a native Expo application for client scheduling, catalog browsing, and profile management across 4 locations.",
+      technologies: ["React", "Vite", "TailwindCSS", "React Native", "Expo", "Supabase", "Zustand"],
+      projectUrl: "/projects/muymuy-beauty",
+    },
     {
       title: "Central Simi Portal",
       imageSrc: "/simiPC.png",
@@ -76,7 +83,7 @@ const Projects = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Encabezado de la Sección */}
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +96,7 @@ const Projects = () => {
             </h2>
           </motion.div>
 
-          {/* Lista Vertical de Estudios de Caso */}
+          {/* Vertical Case Study List */}
           <div className="flex flex-col gap-0">
             {featuredProjects.map((project, index) => (
               <ProjectCaseStudy key={project.title} {...project} index={index} />
