@@ -11,8 +11,8 @@ const Projects = () => {
       imageSrc: "/muymuy_mac.webp",
       mobileImageSrc: "/muymuy_phone.webp",
       description: "Complete digital ecosystem for MUYMUY Beauty Studio. A modern monorepo featuring a React-based administrative platform for branch management and a native Expo application for client scheduling, catalog browsing, and profile management across 4 locations.",
-      technologies: ["React", "Vite", "Expo", "Supabase", "Zustand", "Monorepo"],
-      projectUrl: "/projects/muymuy-beauty",
+      technologies: ["React", "Full-Stack", "iOS & Android", "PostgreSQL", "Admin System"],
+      projectUrl: "#", // Internal page removed
       stickyColor: "bg-rose-100",
     },
     {
@@ -20,8 +20,8 @@ const Projects = () => {
       imageSrc: "/medicadmin_mac.webp",
       mobileImageSrc: "/medicadmin_phone.webp",
       description: "A comprehensive Clinical Management System (CMS) designed for high-performance medical practices. It centralizes patient data through secure Electronic Health Records (EHR), manages complex scheduling across multiple hospitals, and features automated WhatsApp integration for appointment confirmations.",
-      technologies: ["React", "Vite", "Supabase", "WhatsApp API", "PostgreSQL"],
-      projectUrl: "https://drmarcoalvarado.com",
+      technologies: ["React", "Full-Stack", "Healthcare Tech", "WhatsApp API", "Relational DB"],
+      projectUrl: "#",
       stickyColor: "bg-blue-100",
     },
     {
@@ -29,7 +29,7 @@ const Projects = () => {
       imageSrc: "/mediamatch_mac.webp",
       mobileImageSrc: "/mediamatch_phone.webp",
       description: "A specialized PR platform connecting media outlets with the Central Simi team for interview scheduling and press management. Integrates Microsoft Graph API for seamless Outlook calendar synchronization and Resend for automated, high-deliverability email notifications.",
-      technologies: ["React", "Microsoft Graph API", "Resend", "Node.js", "TailwindCSS"],
+      technologies: ["React", "Microsoft Graph", "Cloud Architecture", "Node.js", "Enterprise Mail"],
       projectUrl: "#",
       stickyColor: "bg-amber-100",
     },
@@ -38,7 +38,7 @@ const Projects = () => {
       imageSrc: "/colorstudio_mac.webp",
       mobileImageSrc: "/colorstudio_phone.webp",
       description: "Premium Industrial Design showcase platform. Engineered for visual impact, it combines high-performance asset loading with an editorial layout to present design portfolios with technical precision and artistic flair.",
-      technologies: ["React", "Vite", "GSAP", "TailwindCSS", "UI/UX"],
+      technologies: ["React", "UI/UX Design", "Motion Graphics", "Frontend Architecture", "GSAP"],
       projectUrl: "https://nataliamunoz.art",
       stickyColor: "bg-purple-100",
     },
@@ -47,7 +47,7 @@ const Projects = () => {
       imageSrc: "/galaxy.webp",
       CustomVisualElement: <NeuralNetworkDiagram />,
       description: "Machine Learning project focused on the automatic classification of galaxies (AGN vs Starburst) using spectroscopic data from SDSS. Implements 1D Convolutional Neural Networks (CNNs) to analyze spectral flux arrays, achieving high accuracy in astrophysical categorization.",
-      technologies: ["Python", "TensorFlow", "Astropy", "Scikit-learn", "CNN"],
+      technologies: ["Deep Learning", "TensorFlow", "Astrophysics", "CNN Architecture", "Big Data"],
       projectUrl: "https://github.com/QuantumRizo/agn-starburst-galaxy-classifier",
       stickyColor: null, // No sticky for ML
     },

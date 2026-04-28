@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface ProjectCaseStudyProps {
   title: string;
@@ -62,8 +61,8 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
       {/* --- INFO (Wrapped in Post-it if stickyColor provided) --- */}
       <div className="w-full lg:w-2/5 relative">
         <div className={`
-          ${stickyColor ? `${stickyColor} p-8 shadow-lg` : "p-2"}
-          relative z-10
+          ${stickyColor ? `${stickyColor} p-8 shadow-lg ${index % 2 === 0 ? "-rotate-1" : "rotate-1"}` : "p-2"}
+          transition-transform duration-300 hover:rotate-0 relative z-10
         `}>
           {/* Tape Effect for Sticky Note (Simplified without blur to prevent artifacting) */}
           {stickyColor && (
@@ -88,11 +87,11 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
 
             <div className="flex flex-wrap gap-4 mt-2">
               {projectUrl && projectUrl !== "#" && (
-                <Link to={projectUrl}>
+                <a href={projectUrl} target="_blank" rel="noopener noreferrer">
                   <Button className="rounded-full bg-black text-white hover:bg-gray-800 font-bold px-6 py-4 text-sm shadow-md transition-transform hover:-translate-y-1">
                     View Project <ArrowRight className="ml-2 size-4" />
                   </Button>
-                </Link>
+                </a>
               )}
 
               {githubUrl && (
