@@ -57,7 +57,7 @@ const Footer = () => {
             DAVID_RIZO
           </Link>
           <p className="text-lg leading-relaxed max-w-sm text-slate-400">
-            Data Scientist & Web Developer. Building intelligent, scalable, and user-centric digital experiences. Let's build something great together.
+            Software Engineer | Physicist. Building intelligent, scalable, and user-centric digital experiences. Let's build something great together.
           </p>
         </div>
 

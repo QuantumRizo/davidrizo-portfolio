@@ -46,7 +46,7 @@ const MuyMuyBeauty = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="relative group">
                <img 
-                src="/muymuyPC.png" 
+                src="/muymuyPC.webp" 
                 alt="MUYMUY Admin Platform" 
                 className="rounded-2xl shadow-2xl border border-white/10"
               />
@@ -54,7 +54,7 @@ const MuyMuyBeauty = () => {
             </div>
             <div className="relative group flex justify-center">
                <img 
-                src="/muymuyPhone.png" 
+                src="/muymuyPhone.webp" 
                 alt="MUYMUY Client App" 
                 className="rounded-2xl shadow-2xl border border-white/10 max-h-[500px] w-auto"
               />

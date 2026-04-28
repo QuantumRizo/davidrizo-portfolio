@@ -42,7 +42,7 @@ export default function About() {
             <div className="absolute -bottom-4 -left-4 w-24 h-8 bg-yellow-200/80 -rotate-6 z-20 shadow-sm transform-gpu backdrop-blur-sm" />
 
             <img
-              src="/davidrizo.jpeg"
+              src="/davidrizo.webp"
               alt="Félix David Rizo Serrano"
               className="
                 w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-sm object-cover
