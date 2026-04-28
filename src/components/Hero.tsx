@@ -56,15 +56,18 @@ const Hero: React.FC = () => {
 
         {/* ── MAIN CONTENT ── */}
         <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl">
-          {/* UPDATED BADGE */}
+          {/* UPDATED BADGE (Now with Post-it Tape) */}
           <motion.div
             initial={{ scale: 0, rotate: -15 }}
             animate={{ scale: 1, rotate: -5 }}
             transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
-            className="mb-6 bg-yellow-400 text-black font-black px-6 py-2 rounded-sm -rotate-3 shadow-lg border-2 border-black flex flex-col leading-tight"
+            className="relative mb-6 bg-yellow-400 text-black font-black px-6 py-2 rounded-sm -rotate-3 shadow-lg border-2 border-black flex flex-col leading-tight"
           >
-            <span className="text-sm md:text-base uppercase tracking-wider">David Rizo</span>
-            <span className="text-[10px] md:text-xs opacity-80 border-t border-black/20 mt-1 pt-1">
+            {/* Tape Effect */}
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-white/60 shadow-sm z-20 transform rotate-2"></div>
+
+            <span className="text-sm md:text-base uppercase tracking-wider relative z-10">David Rizo</span>
+            <span className="text-[10px] md:text-xs opacity-80 border-t border-black/20 mt-1 pt-1 relative z-10">
               SOFTWARE ENGINEER | PHYSICIST
             </span>
           </motion.div>

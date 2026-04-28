@@ -76,9 +76,15 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground antialiased;
+  html, body {
+    background-color: black !important;
+    @apply text-foreground antialiased;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background;
   }
 }
 

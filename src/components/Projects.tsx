@@ -13,6 +13,7 @@ const Projects = () => {
       description: "Complete digital ecosystem for MUYMUY Beauty Studio. A modern monorepo featuring a React-based administrative platform for branch management and a native Expo application for client scheduling, catalog browsing, and profile management across 4 locations.",
       technologies: ["React", "Vite", "Expo", "Supabase", "Zustand", "Monorepo"],
       projectUrl: "/projects/muymuy-beauty",
+      stickyColor: "bg-rose-100",
     },
     {
       title: "MedicAdmin: Clinical CMS",
@@ -21,14 +22,16 @@ const Projects = () => {
       description: "A comprehensive Clinical Management System (CMS) designed for high-performance medical practices. It centralizes patient data through secure Electronic Health Records (EHR), manages complex scheduling across multiple hospitals, and features automated WhatsApp integration for appointment confirmations.",
       technologies: ["React", "Vite", "Supabase", "WhatsApp API", "PostgreSQL"],
       projectUrl: "https://drmarcoalvarado.com",
+      stickyColor: "bg-blue-100",
     },
     {
-      title: "MediaMatch: Marketing Platform",
+      title: "Central Simi Media Match",
       imageSrc: "/mediamatch_mac.webp",
       mobileImageSrc: "/mediamatch_phone.webp",
-      description: "Data-driven digital marketing and brand optimization platform. Focused on content management and engagement analytics, helping brands achieve higher performance through streamlined asset delivery and strategic insights.",
-      technologies: ["React", "TailwindCSS", "Framer Motion", "Data Analytics"],
+      description: "A specialized PR platform connecting media outlets with the Central Simi team for interview scheduling and press management. Integrates Microsoft Graph API for seamless Outlook calendar synchronization and Resend for automated, high-deliverability email notifications.",
+      technologies: ["React", "Microsoft Graph API", "Resend", "Node.js", "TailwindCSS"],
       projectUrl: "#",
+      stickyColor: "bg-amber-100",
     },
     {
       title: "Color Studio: Industrial Design",
@@ -37,6 +40,7 @@ const Projects = () => {
       description: "Premium Industrial Design showcase platform. Engineered for visual impact, it combines high-performance asset loading with an editorial layout to present design portfolios with technical precision and artistic flair.",
       technologies: ["React", "Vite", "GSAP", "TailwindCSS", "UI/UX"],
       projectUrl: "https://nataliamunoz.art",
+      stickyColor: "bg-purple-100",
     },
     {
       title: "Galaxy Classification: ML",
@@ -45,6 +49,7 @@ const Projects = () => {
       description: "Machine Learning project focused on the automatic classification of galaxies (AGN vs Starburst) using spectroscopic data from SDSS. Implements 1D Convolutional Neural Networks (CNNs) to analyze spectral flux arrays, achieving high accuracy in astrophysical categorization.",
       technologies: ["Python", "TensorFlow", "Astropy", "Scikit-learn", "CNN"],
       projectUrl: "https://github.com/QuantumRizo/agn-starburst-galaxy-classifier",
+      stickyColor: null, // No sticky for ML
     },
   ];
 
@@ -69,11 +74,11 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Legal Pad Patterns: Red vertical margin + Gray horizontal lines */}
+        {/* Legal Pad Patterns: Red vertical margin (Thickened to 4px) + Gray horizontal lines */}
         <div className="absolute inset-0 z-0 pointer-events-none"
           style={{
             backgroundImage: `
-              linear-gradient(90deg, transparent 79px, #ffbaba 1px, transparent 80px),
+              linear-gradient(90deg, transparent 79px, #ff7e7e 4px, transparent 83px),
               linear-gradient(#d1d5db 1px, transparent 1px)
             `,
             backgroundSize: '100% 100%, 100% 32px'
