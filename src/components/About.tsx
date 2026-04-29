@@ -103,12 +103,10 @@ export default function About() {
               About Me
             </h2>
 
-            <p className="text-2xl md:text-3xl leading-relaxed text-blue-50/90 font-chalk drop-shadow-sm">
-              I’m Félix David Rizo Serrano — a Data Scientist and ML Engineer focused on building intelligent, scalable systems. I work at the intersection of machine learning, data engineering, and modern web technologies, turning complex problems into clean and impactful solutions.
-            </p>
+            <p className="text-1xl md:text-2xl leading-relaxed text-blue-50/90 font-sans drop-shadow-sm">
+              I hold a B.Sc. in Physics from UNAM, with additional coursework in Computer Science. My journey began by applying mathematical modeling to machine learning, which naturally led me into full-stack development. Today, I develop internal software tools at Central Simi, where I build robust, efficient solutions to streamline operational workflows.
 
-            <p className="mt-8 text-2xl md:text-3xl leading-relaxed text-blue-50/90 font-chalk drop-shadow-sm">
-              From deep learning pipelines and galaxy classification research to cloud-based AI products, I approach every project with clarity, curiosity, and high standards. My goal is simple: build technology that feels thoughtful, efficient, and genuinely useful.
+              Beyond the code, I am a multi-instrumentalist playing guitar, bass, piano, and drums. I believe the blend of structure and creativity found in music mirrors the logic of great engineering, and I bring that same disciplined passion to every project I build.
             </p>
           </div>
 

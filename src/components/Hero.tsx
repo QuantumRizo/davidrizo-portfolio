@@ -3,7 +3,7 @@ import React, { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Github, Linkedin, Mail, MessageCircle } from "lucide-react"
 import SectionConnector from "./SectionConnector";
-import { GiRocketFlight, GiAtom, GiObservatory, GiSatelliteCommunication, GiGalaxy } from "react-icons/gi";
+import { GiConsoleController, GiAtom, GiObservatory, GiSatelliteCommunication, GiGalaxy } from "react-icons/gi";
 import { LuFlaskConical } from "react-icons/lu";
 
 const Hero: React.FC = () => {
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
 
         {/* Rocket */}
         <motion.div style={{ y: y5 }} className={`absolute top-[32%] right-3 md:right-12 opacity-80 pointer-events-none rotate-[18deg] ${ic}`}>
-          <GiRocketFlight size={80} />
+          <GiConsoleController size={80} />
         </motion.div>
 
         {/* Galaxy */}
