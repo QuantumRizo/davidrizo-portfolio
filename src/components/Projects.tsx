@@ -10,7 +10,7 @@ const Projects = () => {
       title: "MUYMUY Beauty Studio",
       imageSrc: "/muymuy_mac.webp",
       mobileImageSrc: "/muymuy_phone.webp",
-      description: "Complete digital ecosystem for MUYMUY Beauty Studio. A modern monorepo featuring a React-based administrative platform for branch management and a native Expo application for client scheduling, catalog browsing, and profile management across 4 locations.",
+      description: "MUYMUY Beauty Studio is a comprehensive digital ecosystem designed to unify administrative operations and the end-user experience through a highly organized and scalable codebase. I developed both an administrative web platform and a native mobile application, utilizing a strategic technical isolation approach to ensure stable, conflict-free deployment cycles.",
       technologies: ["React", "Full-Stack", "iOS & Android", "PostgreSQL", "Admin System"],
       projectUrl: "#", // Internal page removed
       stickyColor: "bg-rose-100",
@@ -66,7 +66,7 @@ const Projects = () => {
 
       {/* YELLOW LEGAL PAD CONTAINER */}
       <div className="bg-[#fdf9bd] rounded-b-[3rem] md:rounded-b-[5rem] pb-12 px-4 relative z-10 shadow-2xl overflow-hidden">
-        
+
         {/* PUNCHED HOLES EFFECT (Top) */}
         <div className="absolute top-6 left-0 right-0 flex justify-around px-4 opacity-20 pointer-events-none">
           {[...Array(12)].map((_, i) => (
